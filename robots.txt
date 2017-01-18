@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /php
+Disallow: /3th_party.txt

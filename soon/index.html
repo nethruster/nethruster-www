@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Nethruster</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="container">
+		<div class="cell">
+		<center><button class="floating" onclick="control()"></button></center>
+			<p class="coming">Coming soon... </p>
+		</div>
+	<audio id="music" preload="auto" loop src="https://29d43e4bc7b3406e3fab2eb53e41adc5f90e953b.googledrive.com/host/0Bwx_z3pdb_MWakJqcnJ5c1Rtdkk/Artificial%20Nocturne.mp3" type="audio/mpeg">
+	<p>Tu navegador es incapaz de reproducir el audio vinculado, por favor actualize su navegador.</p>
+	</audio>
+	</section>
+	<script type="text/javascript">
+	var flag = false;
+	var au = document.getElementById('music');
+	function control() {
+		if (!flag) {
+			au.play();
+			flag = true;
+			console.log('%c Esta escuhando Artificial Nocturne - Metric', 'color: #008080;');
+		} else {
+			au.pause();
+			flag = false;
+		}
+	};
+	</script>
+</body>
+</html>

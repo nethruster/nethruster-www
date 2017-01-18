@@ -1,0 +1,5 @@
+Base framework - Materialize - http://materializecss.com;
+Background - Inspired in Google Now;
+JS framework - Jquery - https://jquery.com/
+Material design icons - https://materialdesignicons.com/
+Google Material design icons - https://www.google.com/design/icons/
