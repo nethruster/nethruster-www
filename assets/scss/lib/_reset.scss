@@ -1,0 +1,62 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+a:active,
+a:hover {
+    outline-width: 0
+}
+
+img, img[alt]{
+    border: none;
+    outline: none
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+/* Utils */
+.img-responsive {
+    max-width: 100%
+}
+
+
+/* Misc */
+hr {
+    width: 90%;
+    margin: 0 auto;
+    border: 0.5px dashed rgba(0,0,0,.1);
+}
