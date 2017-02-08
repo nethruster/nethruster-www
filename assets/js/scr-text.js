@@ -81,7 +81,7 @@ var TextScramble = function () {
 // Settings
 // ——————————————————————————————————————————————————
 
-var phrases = ['Welcome,', 'we\'re Nethruster', 'we design,', 'we code', ' and we create.'];
+var phrases = ['We design,', 'we code', ' and we create.'];
 
 var el = document.querySelector('.scramble-text');
 var fx = new TextScramble(el);
