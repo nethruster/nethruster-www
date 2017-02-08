@@ -8,12 +8,12 @@
 
     .header-upper-bar {
         #language-trigger {
-        margin: 0 25px;
-        font-size: .9em;
-            path {
-                fill: currentColor;
+            margin: 0 25px;
+            font-size: .9em;
+                path {
+                    fill: currentColor;
+                }
             }
-        }
     }
 
     .header-middle {
@@ -50,6 +50,7 @@
                 }
 
                 path {
+                    transition: fill .3s;
                     fill: currentColor;
                 }
 
