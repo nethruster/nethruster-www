@@ -1,0 +1,63 @@
+#content-wrapper {
+     padding: 15px 200px 0 200px;
+     justify-content: space-between;
+
+     .left-side {
+         width: 100%;
+         max-width: 780px;
+
+        .block-title {
+            font-weight: 400;
+            font-size: 1.1em;
+            color: #424242;
+        }
+
+        .recent-projects {
+            color: #f5f5f5;
+            @include box_shadow(2);
+            border-radius: 4px;
+            overflow: hidden;
+
+            .recent-project {
+                background-color: #009688;
+                padding: 15px;
+                justify-content: space-between;
+
+                .project-icon {
+                    max-width: 24px;
+                    height: auto;
+                }
+
+                .recent-project-name {
+                    font-weight: 400;
+                    font-size: 1.2em;
+                }
+
+                .recent-project-desc {
+                    font-size: .9em;
+                    font-weight: 300;
+                }
+
+                .recent-project-link {
+                    display: inline-block;
+                    height: 100%;
+                    padding: 10px;
+                    margin: 0 10px;
+                    border-radius: 4px;
+
+                    svg {
+                        transform: scale(1.2);
+                    }
+
+                    &:hover {
+                        background-color: #00695C;
+                    }
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(255,255,255,.4);
+                }
+            }
+        }
+    }
+}
