@@ -2,15 +2,17 @@
      padding: 15px 200px 0 200px;
      justify-content: space-between;
 
-     .left-side {
+    .block-title {
+        font-weight: 400;
+        font-size: 1.1em;
+        color: #424242;
+    }
+
+    .left-side {
          width: 100%;
          max-width: 780px;
 
-        .block-title {
-            font-weight: 400;
-            font-size: 1.1em;
-            color: #424242;
-        }
+        
 
         .recent-projects {
             color: #f5f5f5;
@@ -31,11 +33,12 @@
                 .recent-project-name {
                     font-weight: 400;
                     font-size: 1.2em;
+                    color: #fff;
                 }
 
                 .recent-project-desc {
                     font-size: .9em;
-                    font-weight: 300;
+                    font-weight: 400;
                 }
 
                 .recent-project-link {
@@ -44,9 +47,14 @@
                     padding: 10px;
                     margin: 0 10px;
                     border-radius: 4px;
+                    transition: background-color .3s;
 
                     svg {
                         transform: scale(1.2);
+
+                        path {
+                            fill: #E0F2F1;
+                        }
                     }
 
                     &:hover {
@@ -56,6 +64,35 @@
 
                 &:not(:last-child) {
                     border-bottom: 1px solid rgba(255,255,255,.4);
+                }
+            }
+        }
+    }
+
+    .right-side {
+        .shortcuts {
+            @include box_shadow(2);
+            border-radius: 4px;
+            color: #757575;
+
+            a {
+                display: block;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(20,20,20,.1);
+                }
+            }
+
+            .shortcut {
+                padding: 10px 15px;
+                font-weight: 400;
+
+                
+
+                .site {
+                    color: #b3b4b8;
+                    font-weight: 300;
+                    font-size: .9em;
                 }
             }
         }
