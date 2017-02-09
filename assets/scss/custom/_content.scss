@@ -1,9 +1,14 @@
 @import './content/blog-feed';
 @import './content/recent-projects';
 
+body {
+    min-height: 100vh;
+}
+
 #content-wrapper {
      padding: 15px 200px 0 200px;
      justify-content: space-between;
+     flex: 1;
 
     .block-title {
         font-weight: 400;
