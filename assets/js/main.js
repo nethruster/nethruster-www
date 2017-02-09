@@ -1,9 +1,8 @@
 'use strict'
-var hashReg = /[^#]+/g;
 
 function init(){
     if(window.location.hash) {
-        let getTab = hashReg.exec(window.location.hash);
+        let getTab = /[^#]+/g.exec(window.location.hash);
         setTab(getTab[0]);
     } else {
         setTab('home');
@@ -18,7 +17,7 @@ function fetchBlogData(){
 function setTab(tab) {
     window.location = `#${tab}`;
     var request = new XMLHttpRequest();
-    request.open("GET", `${tab}.html`, true);
+    request.open("GET", `./partials/${tab}.html`, true);
     request.onreadystatechange = function (e) {
         if (request.readyState === 4) {
             if (request.status === 200) {
@@ -46,5 +45,4 @@ function setTab(tab) {
     request.send();
 }
 
-init();
-
+window.addEventListener('load', init);

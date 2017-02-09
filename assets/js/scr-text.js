@@ -81,7 +81,7 @@ var TextScramble = function () {
 // Settings
 // ——————————————————————————————————————————————————
 
-var phrases = ['We design,', 'we code', ' and we create.'];
+var phrases = ['We design,', 'we code', 'we create.'];
 
 var el = document.querySelector('.scramble-text');
 var fx = new TextScramble(el);
@@ -89,7 +89,7 @@ var fx = new TextScramble(el);
 var counter = 0;
 var next = function next() {
   fx.setText(phrases[counter]).then(function () {
-    setTimeout(next, 800);
+    setTimeout(next, 1000);
   });
   counter = (counter + 1) % phrases.length;
 };
