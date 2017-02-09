@@ -1,0 +1,54 @@
+.recent-projects {
+    color: #f5f5f5;
+    @include box_shadow(2);
+    border-radius: $block-br;
+    overflow: hidden;
+
+    .recent-project {
+        background-color: #009688;
+        padding: 15px;
+        justify-content: space-between;
+
+        .project-icon {
+            max-width: 24px;
+            height: auto;
+        }
+
+        .recent-project-name {
+            font-weight: 300;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .recent-project-desc {
+            font-size: .9em;
+            font-weight: 400;
+            margin-left: 30px;
+        }
+
+        .recent-project-link {
+            display: inline-block;
+            height: 100%;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: $block-br;
+            transition: $global-tr;
+
+            svg {
+                transform: scale(1.2);
+
+                path {
+                    fill: #E0F2F1;
+                }
+            }
+
+            &:hover {
+                background-color: #00695C;
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255,255,255,.4);
+        }
+    }
+}
