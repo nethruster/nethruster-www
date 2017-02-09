@@ -2,7 +2,9 @@
 @import 'lib/reset';
 @import 'lib/fonts';
 @import 'lib/utils';
+@import 'lib/vars';
 
 /* Main UI */
 @import 'custom/header';
 @import 'custom/content';
+@import 'custom/footer';

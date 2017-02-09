@@ -1,0 +1,37 @@
+#blog-feed-container {
+    margin-top: 60px;
+
+    .blog-feed {
+        color: #f5f5f5;
+        @include box_shadow(2);
+        border-radius: $block-br;
+        overflow: hidden;
+
+        .blog-entry {
+            background: rgb(69,90,100);
+            padding: 15px;
+            justify-content: space-between;
+
+            .entry-name {
+                font-weight: 300;
+                font-size: 1.2em;
+                color: #fff;
+            }
+
+            .entry-author {
+                font-size: .9em;
+                font-weight: 400;
+                color: rgb(144,164,174);
+
+                .small {
+                    font-size: .8em;
+                }
+            }
+
+            .entry-times {
+                color: rgb(144,164,174);
+                font-size: .8em;
+            }
+        }
+    }
+}

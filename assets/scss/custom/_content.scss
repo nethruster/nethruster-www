@@ -1,3 +1,6 @@
+@import './content/blog-feed';
+@import './content/recent-projects';
+
 #content-wrapper {
      padding: 15px 200px 0 200px;
      justify-content: space-between;
@@ -11,105 +14,12 @@
     .left-side {
          width: 100%;
          max-width: 780px;
-
-        .recent-projects {
-            color: #f5f5f5;
-            @include box_shadow(2);
-            border-radius: 4px;
-            overflow: hidden;
-
-            .recent-project {
-                background-color: #009688;
-                padding: 15px;
-                justify-content: space-between;
-
-                .project-icon {
-                    max-width: 24px;
-                    height: auto;
-                }
-
-                .recent-project-name {
-                    font-weight: 300;
-                    font-size: 1.2em;
-                    color: #fff;
-                }
-
-                .recent-project-desc {
-                    font-size: .9em;
-                    font-weight: 400;
-                    margin-left: 30px;
-                }
-
-                .recent-project-link {
-                    display: inline-block;
-                    height: 100%;
-                    padding: 10px;
-                    margin: 0 10px;
-                    border-radius: 4px;
-                    transition: background-color .3s;
-
-                    svg {
-                        transform: scale(1.2);
-
-                        path {
-                            fill: #E0F2F1;
-                        }
-                    }
-
-                    &:hover {
-                        background-color: #00695C;
-                    }
-                }
-
-                &:not(:last-child) {
-                    border-bottom: 1px solid rgba(255,255,255,.4);
-                }
-            }
-        }
-
-        #blog-feed-container {
-            margin-top: 60px;
-
-            .blog-feed {
-                    color: #f5f5f5;
-                    @include box_shadow(2);
-                    border-radius: 4px;
-                    overflow: hidden;
-
-                    .blog-entry {
-                        background: rgb(69,90,100);
-                        padding: 15px;
-                        justify-content: space-between;
-
-                        .entry-name {
-                            font-weight: 300;
-                            font-size: 1.2em;
-                            color: #fff;
-                        }
-
-                        .entry-author {
-                            font-size: .9em;
-                            font-weight: 400;
-                            color: rgb(144,164,174);
-
-                            .small {
-                                font-size: .8em;
-                            }
-                        }
-
-                        .entry-times {
-                            color: rgb(144,164,174);
-                            font-size: .8em;
-                        }
-                    }
-                }
-            }
-        }
+    }
 
     .right-side {
         .shortcuts {
             @include box_shadow(2);
-            border-radius: 4px;
+            border-radius: $block-br;
             color: #757575;
 
             a {
@@ -123,8 +33,6 @@
             .shortcut {
                 padding: 10px 15px;
                 font-weight: 400;
-
-                
 
                 .site {
                     color: #b3b4b8;
