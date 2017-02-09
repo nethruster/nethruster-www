@@ -1,7 +1,14 @@
 'use strict'
+var hashReg = /[^#]+/g;
 
 function init(){
-    setTab('home');
+    if(window.location.hash) {
+        let getTab = hashReg.exec(window.location.hash);
+        setTab(getTab[0]);
+    } else {
+        setTab('home');
+    }
+    
 }
 
 function fetchBlogData(){
@@ -9,15 +16,16 @@ function fetchBlogData(){
 }
 
 function setTab(tab) {
-    var previousTab;
+    window.location = `#${tab}`;
     var request = new XMLHttpRequest();
     request.open("GET", `${tab}.html`, true);
-    request.onload = function (e) {
+    request.onreadystatechange = function (e) {
         if (request.readyState === 4) {
             if (request.status === 200) {
-                 
                  let activeElements = document.getElementsByClassName("active");
-                 activeElements[0].classList.toggle('active');
+                 if(activeElements[0]){
+                    activeElements[0].classList.toggle('active');
+                 }
 
                  document.getElementById("content-wrapper").innerHTML = request.responseText;
                  document.getElementById(`${tab}-tab`).classList.toggle('active');
@@ -31,9 +39,12 @@ function setTab(tab) {
                         document.getElementById("twitter-timeline"));
                  }
             } else {
-                console.error(request.statusText);
+                setTab('not-found');
             }
         }
     };
     request.send();
 }
+
+init();
+
