@@ -91,11 +91,22 @@
                 </div>
             </div>
             <div id="blog-feed-container">
+                <h2 class="block-title">
+                    Blog Feed
+                </h2>
                 <div class="block-title">
                     <div class="blog-feed">
-                        <div class="blog-entry">
-                            <!--Blog Feed -->
-                        </div>
+                        <a href="https://blog.claudio4.com" rel="noopener" target="_blank">
+                            <div class="blog-entry flex flex-cross-center">
+                                <div class="entry-info">
+                                    <h4 class="entry-name">This is a title to fill this thing until we have our ajax data</h4>
+                                    <p class="entry-author"><span class="small">By</span> Claudio4</p>
+                                </div>
+                                <div class="entry-times">
+                                    Posted 14h ago.
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -104,8 +115,8 @@
             <div id="twitter-timeline">
                  <a class="twitter-timeline" data-dnt="true" data-link-color="#2a3a44" href="https://twitter.com/nethruster">Tweets by nethruster</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-           <div class="shortcuts-container">
-               <h2 class="block-title">
+            <div class="shortcuts-container">
+                <h2 class="block-title">
                     Quick links
                 </h2>
                 <div class="shortcuts">
@@ -125,7 +136,7 @@
                         &nbsp;&nbsp;&nbsp;Twitter<span class="site">&nbsp;|&nbsp;twitter.com</span>
                         </div>
                     </a>
-                    <a href="mailto:nethruster@gmail.com" rel="noopener" target="_blank">
+                    <a href="mailto:nethruster@gmail.com" rel="noopener">
                         <div class="shortcut flex flex-cross-center">
                             <svg style="width:18px;height:18px;" viewBox="0 0 24 24">
                                 <path fill="#bdbdbd" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
@@ -133,12 +144,16 @@
                         &nbsp;&nbsp;&nbsp;Email<span class="site">&nbsp;|&nbsp;nethruster.com</span>
                         </div>
                     </a>
-               </div>
-           </div>
+                </div>
+            </div>
         </div>
-        
     </div>
 
     <script src="assets/js/scr-text.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        console.log(fetchBlogData());
+    </script>
 </body>
 </html>
