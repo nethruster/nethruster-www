@@ -1,5 +1,5 @@
-@import './content/blog-feed';
-@import './content/recent-projects';
+@import './content/home/blog-feed';
+@import './content/home/recent-projects';
 
 body {
     min-height: 100vh;
@@ -24,32 +24,5 @@ body {
     .left-side {
          width: 100%;
          max-width: 780px;
-    }
-
-    .right-side {
-        .shortcuts {
-            @include box_shadow(2);
-            border-radius: $block-br;
-            color: #757575;
-
-            a {
-                display: block;
-
-                &:not(:last-child) {
-                    border-bottom: 1px solid rgba(20,20,20,.1);
-                }
-            }
-
-            .shortcut {
-                padding: 10px 15px;
-                font-weight: 400;
-
-                .site {
-                    color: #b3b4b8;
-                    font-weight: 300;
-                    font-size: .9em;
-                }
-            }
-        }
     }
 }
