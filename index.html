@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <title>Nethruster</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -19,10 +21,21 @@
             </span>
         </div>
         <div class="header-middle flex flex-cross-center">
-            <div class="middle-titles">
+            <div id="home-titles" class="middle-titles title-active">
                 <h1 id="title">Welcome to Nethruster</h1>
-                <div id="desc"></div>
-                <div id="scrt" class="scramble-text"></div>
+                <div class="scramble-text"></div>
+            </div>
+            <div id="team-titles" class="middle-titles">
+                <h1 id="title">This is us</h1>
+                <div id="desc">Learn about Nethruster's core.</div>
+            </div>
+            <div id="status-titles" class="middle-titles">
+                <h1 id="title">Our workflow</h1>
+                <div id="desc">Explore and keep track of our work.</div>
+            </div>
+            <div id="contact-titles" class="middle-titles">
+                <h1 id="title">Get in touch</h1>
+                <div id="desc">Have any questions? Wanna say hello? Send us a message!</div>
             </div>
             <div class="middle-buttons flex flex-dc flex-full-center">
                 <a href="https://twitter.com/nethruster" class="header-button flex flex-full-center" target="_blank" rel="noopener">
@@ -50,8 +63,8 @@
             
         </div>
     </div>
-    <div id="content-wrapper" class="flex">
-        <div id="home" class="flex">
+    <div id="content-wrapper">
+        <div id="home" class="flex section section-active">
             <div class="left-side">
                 <div id="recent-projects-container">
                     <h2 class="block-title">
@@ -124,22 +137,22 @@
                 </div>
             </div>
         </div>
-        <div id="team">
-
+        <div id="team" class="flex section">
+            Team
         </div>
-        <div id="status">
-
+        <div id="status" class="flex section">
+            Status
         </div>
-        <div id="contact">
-
+        <div id="contact" class="flex section">
+            Contact
         </div>
-        <div id="not-found">
-            
+        <div id="not-found" class="flex section">
+            Not Found
         </div>
     </div>
     <div id="footer">
         Nethruster&nbsp;&nbsp;2015&nbsp;&dash;&nbsp;<script>document.write(new Date().getFullYear())</script>
     </div>
-    <script async src="assets/js/scr-text.js"></script>
+    <script async defer src="assets/js/scr-text.js"></script>
 </body>
 </html>
