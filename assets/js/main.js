@@ -4,13 +4,13 @@ var homeTab = document.getElementById("home-tab");
 var teamTab = document.getElementById("team-tab");
 var statusTab = document.getElementById("status-tab");
 var contactTab = document.getElementById("contact-tab");
+var tabSlider = document.getElementById("tabs-slider");
 
 function init(){
     handleRoute();
 }
 
 function setTab(tab, pos) {
-    var tabSlider = document.getElementById("tabs-slider");
     let activeTabElements = document.getElementsByClassName("active");
     let activeTitleElements = document.getElementsByClassName("title-active");
     let activeContentElements = document.getElementsByClassName("section-active");
