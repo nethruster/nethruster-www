@@ -3,7 +3,7 @@
 
     .blog-feed {
         color: #f5f5f5;
-        @include box_shadow(2);
+        @include box_shadow(1);
         border-radius: $block-br;
         overflow: hidden;
         margin: 0 50px 20px 0;
