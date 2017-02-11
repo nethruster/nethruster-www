@@ -3,6 +3,7 @@
     @include box_shadow(2);
     border-radius: $block-br;
     overflow: hidden;
+    margin-right: 50px;
 
     .recent-project {
         background-color: #009688;
@@ -15,7 +16,7 @@
         }
 
         .recent-project-name {
-            font-weight: 300;
+            font-weight: 400;
             font-size: 1.2em;
             color: #fff;
         }
@@ -35,7 +36,8 @@
             transition: $global-tr;
 
             svg {
-                transform: scale(1.2);
+                height: 26px;
+                width: 26px;
 
                 path {
                     fill: #E0F2F1;

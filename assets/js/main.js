@@ -9,7 +9,7 @@ function init(){
     handleRoute();
 }
 
-function setTab(tab, position) {
+function setTab(tab, pos) {
     var tabSlider = document.getElementById("tabs-slider");
     let activeTabElements = document.getElementsByClassName("active");
     let activeTitleElements = document.getElementsByClassName("title-active");
@@ -29,10 +29,10 @@ function setTab(tab, position) {
     document.getElementById(`${tab}`).classList.toggle('section-active');
 
     // Change current location
-    location.hash = tab;
+    history.pushState({}, "", tab);
 
     // Move slider to the correct position
-    tabSlider.style.left = `${position}%`;
+    tabSlider.style.left = `${pos}%`;
 }
 
 function fetchBlogData() {
@@ -42,22 +42,24 @@ function fetchBlogData() {
 function handleRoute() {
     // To switch to a tab if there's a parameter in the url
 
-    // TODO use furls
-    if (location.hash === "#home" || !location.hash) {
+    //  Isolate the parameter
+    let param = /[^/]*$/.exec(location.pathname)[0];
+
+    if (param === "home" || param == null) {
         setTab(homeTab.dataset.tab, homeTab.dataset.pos);
-    } else if(location.hash === "#team") {
+    } else if(param === "team") {
         setTab(teamTab.dataset.tab, teamTab.dataset.pos);
-    } else if(location.hash === "#status") {
+    } else if(param === "status") {
         setTab(statusTab.dataset.tab, statusTab.dataset.pos);
-    } else if(location.hash === "#contact") {
+    } else if(param === "contact") {
         setTab(contactTab.dataset.tab, contactTab.dataset.pos);
     } else {
         // TODO Manage not found
     }
 }
 
-homeTab.addEventListener('click', function(){setTab(homeTab.dataset.tab, homeTab.dataset.pos);});
-teamTab.addEventListener('click', function(){setTab(teamTab.dataset.tab, teamTab.dataset.pos);});
-statusTab.addEventListener('click', function(){setTab(statusTab.dataset.tab, statusTab.dataset.pos);});
-contactTab.addEventListener('click', function(){setTab(contactTab.dataset.tab, contactTab.dataset.pos);});
+homeTab.addEventListener('click', function(){setTab(homeTab.dataset.tab, homeTab.dataset.pos);return false;});
+teamTab.addEventListener('click', function(){setTab(teamTab.dataset.tab, teamTab.dataset.pos);return false;});
+statusTab.addEventListener('click', function(){setTab(statusTab.dataset.tab, statusTab.dataset.pos);return false;});
+contactTab.addEventListener('click', function(){setTab(contactTab.dataset.tab, contactTab.dataset.pos);return false;});
 window.addEventListener('load', init);
