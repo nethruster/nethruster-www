@@ -1,12 +1,10 @@
 .recent-projects {
-    color: #f5f5f5;
-    @include box_shadow(2);
+    color: rgb(69,90,100);
     border-radius: $block-br;
     overflow: hidden;
     margin-right: 50px;
 
     .recent-project {
-        background-color: #009688;
         padding: 15px;
         justify-content: space-between;
 
@@ -18,7 +16,6 @@
         .recent-project-name {
             font-weight: 400;
             font-size: 1.2em;
-            color: #fff;
         }
 
         .recent-project-desc {
@@ -40,17 +37,17 @@
                 width: 26px;
 
                 path {
-                    fill: #E0F2F1;
+                    fill: lighten(rgb(69,90,100), 20%);
                 }
             }
 
             &:hover {
-                background-color: #00695C;
+                background-color: lighten(rgb(69,90,100), 60%);
             }
         }
 
         &:not(:last-child) {
-            border-bottom: 1px solid rgba(255,255,255,.4);
+            border-bottom: 1px solid rgba(0, 0, 0,.1);
         }
     }
 }
