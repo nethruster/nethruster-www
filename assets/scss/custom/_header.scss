@@ -2,7 +2,7 @@
     width: 100%;
     background-image: url(../img/bg.jpeg);
     background-position: 65% 20%;
-    padding: 15px 200px 0 200px;
+    padding: $container-padding;
     color: #f5f5f5;
     @include box_shadow(2);
 
@@ -61,9 +61,11 @@
                 text-transform: uppercase;
                 letter-spacing: 1.5px;
                 font-size: .8em;
+                white-space: nowrap;
 
                 svg {
-                    transform: scale(.8);
+                    width: 18px;
+                    height: auto;
                 }
 
                 path {
@@ -110,6 +112,15 @@
             width: 25%;
             text-align: center;
 
+            svg {
+                width: 22px;
+                height: 22px;
+
+                path {
+                    fill: darken(#fff, 15%);
+                }
+            }
+
             &.active {
                 border-color: #d53437;
             }
@@ -118,10 +129,5 @@
                 background-color: rgba(255,255,255,.1);
             }
         }
-
-       
     }
 }
-
-
-

@@ -13,12 +13,12 @@
     <div id="header">
         <div class="header-upper-bar flex flex-cross-center">
             <span id="logo">LOGO</span>
-            <span id="language-trigger" class="flex flex-cross-center pointer">
+            <!-- <span id="language-trigger" class="flex flex-cross-center pointer">
                 <svg viewBox="0 0 24 24">
                     <path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                 </svg>
                 &nbsp;<p>Language</p>
-            </span>
+            </span> -->
         </div>
         <div class="header-middle flex flex-cross-center">
             <div id="home-titles" class="middle-titles title-active">
@@ -35,7 +35,7 @@
             </div>
             <div id="contact-titles" class="middle-titles">
                 <h1 id="title">Get in touch</h1>
-                <div id="desc">Have any questions? Wanna say hello? Send us a message!</div>
+                <div id="desc">Have any questions? Send us a message!</div>
             </div>
             <div class="middle-buttons flex flex-dc flex-full-center">
                 <a href="https://twitter.com/nethruster" class="header-button flex flex-full-center" target="_blank" rel="noopener">
@@ -54,13 +54,32 @@
         </div>
         <div class="header-navigation-tabs">
             <ul class="header-tabs">
-                <li id="home-tab" class="header-tab pointer active" data-pos="0" data-tab="home">Home</li>
-                <li id="team-tab" class="header-tab pointer" data-pos="25" data-tab="team">Team</li>
-                <li id="status-tab" class="header-tab pointer" data-pos="50" data-tab="status">Status</li>
-                <li id="contact-tab" class="header-tab pointer" data-pos="75" data-tab="contact">Contact</li>
+                <li id="home-tab" class="header-tab pointer flex flex-main-center active" data-pos="0" data-tab="home">
+                    <svg viewBox="0 0 22 22">
+                        <path d="M8,20H5V12H2L12,3L22,12H19V20H12V14H8V20M14,14V17H17V14H14Z" />
+                    </svg>
+                    <span>&nbsp;Home</span>
+                </li>
+                <li id="team-tab" class="header-tab pointer flex-main-center" data-pos="25" data-tab="team">
+                    <svg viewBox="0 0 22 22">
+                        <path d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+                    </svg>
+                    <span>&nbsp;Team</span>
+                </li>
+                <li id="status-tab" class="header-tab pointer flex-main-center" data-pos="50" data-tab="status">
+                    <svg viewBox="0 0 22 22">
+                        <path d="M12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5M13,14H11V8H13M13,18H11V16H13M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" />
+                    </svg>
+                    <span>&nbsp;Status</span>
+                </li>
+                <li id="contact-tab" class="header-tab pointer flex-main-center" data-pos="75" data-tab="contact">
+                    <svg viewBox="0 0 22 22">
+                        <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18" />
+                    </svg>
+                    <span>&nbsp;Contact</span>
+                </li>
                 <div id="tabs-slider" class="tabs-underbar"></div>
             </ul>
-            
         </div>
     </div>
     <div id="content-wrapper">
@@ -73,17 +92,17 @@
                     <div class="recent-projects">
                         <div class="recent-project flex flex-cross-center">
                             <div class="recent-projec-info">
-                                <h4 class="recent-project-name"><img src="assets/img/ytsync.svg" alt="YouSync Logo" class="img-responsive project-icon">&nbsp;YoutuSync</h4>
+                                <h4 class="recent-project-name flex flex-cross-center"><img src="assets/img/ytsync.svg" alt="YouSync Logo" class="img-responsive project-icon">&nbsp;<span>YoutuSync</span></h4>
                                 <p class="recent-project-desc">Watch and listen to multiple YouTube videos at the same time.</p>
                             </div>
-                            <div class="recent-project-links">
+                            <div class="recent-project-links flex flex-full-center">
                                 <a href="https://ytsync.nethruster.com" class="recent-project-link" rel="noopener" target="_blank">
-                                    <svg viewBox="0 0 24 24">
+                                    <svg viewBox="0 0 26 26">
                                         <path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                                     </svg>
                                 </a>
                                 <a href="https://github.com/nethruster/ytsync" class="recent-project-link" rel="noopener" target="_blank">
-                                    <svg viewBox="0 0 24 24">
+                                    <svg viewBox="0 0 26 26">
                                         <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
                                     </svg>
                                 </a>
@@ -91,17 +110,17 @@
                         </div>
                         <div class="recent-project flex flex-cross-center">
                             <div class="recent-projec-info">
-                                <h4 class="recent-project-name"><img src="assets/img/ByteTime.svg" alt="YouSync Logo" class="img-responsive project-icon">&nbsp;ByteTime</h4>
+                                <h4 class="recent-project-name flex flex-cross-center"><img src="assets/img/ByteTime.svg" alt="YouSync Logo" class="img-responsive project-icon">&nbsp;<span>ByteTime</span></h4>
                                 <p class="recent-project-desc">Previously a Minecraft community. About to become something bigger.</p>
                             </div>
-                            <div class="recent-project-links">
+                            <div class="recent-project-links flex flex-full-center">
                                 <a href="https://byte-time.com" class="recent-project-link" rel="noopener" target="_blank">
-                                    <svg viewBox="0 0 24 24">
+                                    <svg viewBox="0 0 26 26">
                                         <path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                                     </svg>
                                 </a>
                                 <a href="" class="recent-project-link" rel="noopener" target="_blank">
-                                    <svg viewBox="0 0 24 24">
+                                    <svg viewBox="0 0 26 26">
                                         <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
                                     </svg>
                                 </a>
@@ -113,20 +132,18 @@
                     <h2 class="block-title">
                         Blog Feed
                     </h2>
-                    <div class="block-title">
-                        <div class="blog-feed">
-                            <a href="https://blog.claudio4.com" rel="noopener" target="_blank">
-                                <div class="blog-entry flex flex-cross-center">
-                                    <div class="entry-info">
-                                        <h4 class="entry-name">This is a title to fill this thing until we have our ajax data</h4>
-                                        <p class="entry-author"><span class="small">By</span> Claudio4</p>
-                                    </div>
-                                    <div class="entry-times">
-                                        Posted 14h ago.
-                                    </div>
+                    <div class="blog-feed">
+                        <a href="https://blog.claudio4.com" rel="noopener" target="_blank">
+                            <div class="blog-entry flex flex-cross-center">
+                                <div class="entry-info">
+                                    <h4 class="entry-name">This is a title to fill this thing until we have our ajax data</h4>
+                                    <p class="entry-author"><span class="small">By</span> Claudio4</p>
                                 </div>
-                            </a>
-                        </div>
+                                <div class="entry-times">
+                                    Posted 14h ago.
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

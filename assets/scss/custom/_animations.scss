@@ -1,24 +1,10 @@
 @keyframes in {
     0%   {
-        margin-left: -20px;
         opacity: 0;
         display: none;
     }
     100%   {
-        margin-left: 0;
         opacity: 1;
         display: block;
-    }
-}
-
-/* Maybe remove it */
-@keyframes contentIn {
-    0%   {
-        opacity: 0;
-        display: none;
-    }
-    100%   {
-        opacity: 1;
-        display: flex;
     }
 }
