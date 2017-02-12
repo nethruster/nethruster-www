@@ -1,0 +1,34 @@
+{
+  "name": "nethruster-website",
+  "version": "1.0.0",
+  "description": "Nethruster's webpage source code",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nethruster/nethruster-website.git"
+  },
+  "keywords": [
+    "nethruster"
+  ],
+  "author": "Netrhuster",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nethruster/nethruster-website/issues"
+  },
+  "homepage": "https://github.com/nethruster/nethruster-website#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.4-rc.2",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {}
+}
