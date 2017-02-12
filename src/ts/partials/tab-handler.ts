@@ -15,8 +15,8 @@ class TabHandler {
     this.tabList.forEach(tab => {
       var listener = TabHandler.listener.bind(this);
       tab.addEventListener("click", listener);
-      document.getElementById('header-contact-button').addEventListener("click", listener);
     });
+    document.getElementById('header-contact-button').addEventListener("click", TabHandler.listener.bind(this));
   }
 
   private static listener(e: Event): boolean {
