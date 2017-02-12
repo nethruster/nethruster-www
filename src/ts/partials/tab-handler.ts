@@ -15,6 +15,7 @@ class TabHandler {
     this.tabList.forEach(tab => {
       var listener = TabHandler.listener.bind(this);
       tab.addEventListener("click", listener);
+      document.getElementById('header-contact-button').addEventListener("click", listener);
     });
   }
 
@@ -24,7 +25,7 @@ class TabHandler {
     e.preventDefault();
     var that = <any>this;
     let el = e.target as HTMLElement;
-    if(el.tagName === "SPAN" || el.tagName === "svg") {
+    if(el.tagName === "SPAN" || el.tagName === "svg" || el.tagName === "P") {
       that.setTab(el.parentElement);
     } else if(el.tagName === "path"){
       that.setTab(el.parentElement.parentElement);

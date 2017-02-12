@@ -43,9 +43,9 @@
                     </svg>&nbsp;
                     <p>Follow us</p>
                 </a>
-                <a class="header-button flex flex-full-center pointer" onclick="setTab('contact', 75)">
-                    <svg class="contact" viewBox="0 0 24 24">
-                        <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18" />
+                <a id="header-contact-button" class="header-button flex flex-full-center pointer" data-pos="75" data-tab="contact">
+                   <svg class="contact" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/>
                     </svg>&nbsp;
                     <p>Get in touch</p>
                 </a>
@@ -53,25 +53,25 @@
         </div>
         <div class="header-navigation-tabs">
             <ul class="header-tabs">
-                <li id="home-tab" class="header-tab pointer flex flex-main-center" data-pos="0" data-tab="home">
+                <li id="home-tab" class="header-tab pointer flex flex-full-center" data-pos="0" data-tab="home">
                    <svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                     </svg>
                     <span>&nbsp;Home</span>
                 </li>
-                <li id="team-tab" class="header-tab pointer flex-main-center" data-pos="25" data-tab="team">
+                <li id="team-tab" class="header-tab pointer flex-full-center" data-pos="25" data-tab="team">
                     <svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                     </svg>
                     <span>&nbsp;Team</span>
                 </li>
-                <li id="status-tab" class="header-tab pointer flex-main-center" data-pos="50" data-tab="status">
+                <li id="status-tab" class="header-tab pointer flex-full-center" data-pos="50" data-tab="status">
                    <svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
                     </svg>
                     <span>&nbsp;Status</span>
                 </li>
-                <li id="contact-tab" class="header-tab pointer flex-main-center" data-pos="75" data-tab="contact">
+                <li id="contact-tab" class="header-tab pointer flex-full-center" data-pos="75" data-tab="contact">
                     <svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/>
                     </svg>
