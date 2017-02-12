@@ -17,20 +17,25 @@ class TextScramble {
     this.phrases = phrases;
     this.update = this.update.bind(this);
   }
+
   public start():void {
     this.refresh();
   }
+
   public stop():void {
     clearTimeout(this.intervalId);
   }
+
   private static timer() {
     var that: any = this;
     that.setText(that.phrases[that.counter]).then(that.refresh.bind(that));
     that.counter = (that.counter + 1) % that.phrases.length
   }
+
   private refresh() {
     this.intervalId = setTimeout(TextScramble.timer.bind(this), this.refreshTime);
   }
+
   private setText(newText) {
     const oldText = this.element.innerText
     const length = Math.max(oldText.length, newText.length)
@@ -43,11 +48,13 @@ class TextScramble {
       const end = start + Math.floor(Math.random() * 40)
       this.queue.push({ from, to, start, end })
     }
+
     cancelAnimationFrame(this.frameRequest)
     this.frame = 0
     this.update()
     return promise
   }
+
   private update() {
     let output = ''
     let complete = 0
@@ -66,6 +73,7 @@ class TextScramble {
         output += from
       }
     }
+
     this.element.innerHTML = output
     if (complete === this.queue.length) {
       this.resolve()
@@ -74,6 +82,7 @@ class TextScramble {
       this.frame++
     }
   }
+  
   randomChar(): string {
     return this.chars[Math.floor(Math.random() * this.chars.length)]
   }

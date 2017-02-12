@@ -72,13 +72,14 @@
         left: 0;
         right: 0;
         background-color: rgba(38,50,56, .9);
-
-        span {
-            display: none;
-        }
+        
+       .header-tab {
+            letter-spacing: normal;
+            font-size: .8em;
+       }
     }
 
     #footer {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 }
