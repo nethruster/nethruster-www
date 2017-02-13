@@ -1,6 +1,6 @@
 import TabHandler from './tab-handler';
 
-function handleRoute(handler: TabHandler){
+function routeHandler(handler: TabHandler){
   let param = /[^/]*$/.exec(location.pathname)[0];
 
   if(param && param != null) {
@@ -17,4 +17,4 @@ function handleRoute(handler: TabHandler){
   }
 }
 
-export default handleRoute;
+export default routeHandler;
