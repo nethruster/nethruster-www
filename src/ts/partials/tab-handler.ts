@@ -24,7 +24,7 @@ class TabHandler {
     e.stopImmediatePropagation();
     e.preventDefault();
     var that = <any>this;
-    let el = e.target as HTMLElement;
+    let el = <HTMLElement>e.target;
     if(el.tagName === "SPAN" || el.tagName === "svg" || el.tagName === "P") {
       that.setTab(el.parentElement);
     } else if(el.tagName === "path"){
@@ -36,6 +36,10 @@ class TabHandler {
   }
 
   setTab(tab: HTMLElement): void {
+    if (tab.dataset["tab"] === document.getElementsByClassName("section-active")[0].id) {
+      // We don't need to change tabs if we are already in place
+      return;
+    }
     // Remove the active class from the current active element
     this.cleanSelected(document.getElementsByClassName("title-active"), document.getElementsByClassName("section-active"));
     // Add the active class to the selected element 
