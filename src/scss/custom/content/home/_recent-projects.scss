@@ -3,51 +3,50 @@
     border-radius: $block-br;
     overflow: hidden;
     margin-right: 50px;
+}
 
-    .recent-project {
-        padding: 15px;
-        justify-content: space-between;
+.recent-project {
+    padding: 15px;
+    justify-content: space-between;
 
-        .project-icon {
-            max-width: 24px;
-            height: auto;
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0,.1);
+    }
+}
+
+.project-icon {
+    max-width: 24px;
+    height: auto;
+}
+
+.recent-project-name {
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.recent-project-desc {
+    font-size: .9em;
+    font-weight: 400;
+    margin-left: 30px;
+}
+
+.recent-project-link {
+    display: inline-block;
+    height: 100%;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: $block-br;
+    transition: $global-tr;
+
+    svg {
+        width: 26px;
+
+        path {
+            fill: lighten(rgb(69,90,100), 20%);
         }
+    }
 
-        .recent-project-name {
-            font-weight: 400;
-            font-size: 1.2em;
-        }
-
-        .recent-project-desc {
-            font-size: .9em;
-            font-weight: 400;
-            margin-left: 30px;
-        }
-
-        .recent-project-link {
-            display: inline-block;
-            height: 100%;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: $block-br;
-            transition: $global-tr;
-
-            svg {
-                height: 26px;
-                width: 26px;
-
-                path {
-                    fill: lighten(rgb(69,90,100), 20%);
-                }
-            }
-
-            &:hover {
-                background-color: lighten(rgb(69,90,100), 60%);
-            }
-        }
-
-        &:not(:last-child) {
-            border-bottom: 1px solid rgba(0, 0, 0,.1);
-        }
+    &:hover {
+        background-color: lighten(rgb(69,90,100), 60%);
     }
 }

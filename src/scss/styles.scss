@@ -3,11 +3,12 @@
 @import 'lib/fonts';
 @import 'lib/utils';
 @import 'lib/vars';
+@import 'lib/icons';
 @import 'custom/animations';
 
 /* Main UI */
-@import 'custom/header';
-@import 'custom/content';
+@import 'custom/header/header';
+@import 'custom/content/content';
 @import 'custom/footer';
 
 /* Responsive */
