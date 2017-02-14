@@ -1,0 +1,80 @@
+.team-list{
+    width: 100%;
+    flex-direction: column;
+}
+
+.member-profile {
+    padding: 15px;
+}
+
+.team-member {
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+
+    &:hover {
+        .arrow {
+            path {
+                fill: #d53437;
+            }
+        }
+    }
+}
+
+.member-image {
+    img {
+        width: 100px;
+        border-radius: 50%;
+    }
+}
+
+.member-name {
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+.member-title {
+    font-size: .9em;
+    color: darken(#fff, 55%);
+}
+
+.member-link-button {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    margin: 5px 0;
+    color: darken(#fff, 15%);
+    white-space: nowrap;
+    
+    p {
+        color: darken(#fff, 75%);
+    }
+    
+    &:hover {
+        .twitter path {
+            fill: $twitter-color;
+        }
+
+        .github path {
+            fill: $github-color;
+        }
+
+        .website path {
+            fill: $other-color;
+        }
+    }
+}
+
+.arrow {
+    svg {
+        width: 72px;
+        path {
+            fill: #d9d9d9;
+        }
+    }
+}
