@@ -20,7 +20,7 @@
     &:hover {
         .arrow {
             path {
-                fill: #d53437;
+                fill: rgba(38,50,56, .9);
             }
         }
     }
@@ -77,4 +77,8 @@
             fill: #d9d9d9;
         }
     }
+}
+
+.arrow-to-left {
+    transform: rotate(180deg);
 }

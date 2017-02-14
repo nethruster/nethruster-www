@@ -14,10 +14,12 @@
     margin: 45px 0;
     color: currentColor;
     justify-content: space-between;
-    h1 {
-        font-weight: 200;
-        margin: 10px 0;
-    }
+}
+
+.header-middle-title {
+    font-weight: 200;
+    margin: 10px 0;
+    white-space: nowrap;
 }
 
 .middle-titles {
@@ -37,6 +39,6 @@
     opacity: 1;
 }
 
-.scramble-text, .desc {
+.scramble-text, .header-middle-desc {
     color: #bdbdbd;
 }
