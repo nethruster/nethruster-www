@@ -1,0 +1,13 @@
+#contact {
+    justify-content: space-around;
+}
+
+.contact-data-input {
+    &.error {
+        border-color: red;
+    }
+
+    &.valid {
+        border-color: green;
+    }
+}

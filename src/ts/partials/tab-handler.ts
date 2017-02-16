@@ -61,7 +61,6 @@ class TabHandler {
     document.getElementById(`${tab}-titles`).classList.toggle('title-active');
     document.getElementById(`${tab}`).classList.toggle('section-active');
   }
-
 }
 
 export default TabHandler;
