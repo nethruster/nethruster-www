@@ -238,7 +238,7 @@
                         <textarea id="cf-message" class="contact-data-input" data-type="message" placeholder="Okay, now the full message"></textarea>
                         <span class="validation"></span>
                     </span>
-                    <div id="cf-recpt" class="g-recaptcha" data-sitekey="6LfiixUTAAAAAAEzskfHGXkqtu1z9LCGTVwcvIoO" data-callback="test" data-response=""></div>
+                    <div id="cf-recpt" class="g-recaptcha" data-sitekey="6LfiixUTAAAAAAEzskfHGXkqtu1z9LCGTVwcvIoO"></div>
                     <span id="final-validation" class="validation"></span>
                     <button id="cf-send-button" class="cf-send">Send Message</button>
                 </form>
@@ -252,10 +252,5 @@
         <p>Nethruster&nbsp;&nbsp;2015&nbsp;&dash;&nbsp;<script>document.write(new Date().getFullYear())</script></p>
     </div>
     <script defer async type="text/javascript" src="//platform.twitter.com/widgets.js" ></script>
-    <script>
-        function test(r) {
-            document.getElementById('cf-recpt').dataset.response = r;
-        }
-    </script>
 </body>
 </html>

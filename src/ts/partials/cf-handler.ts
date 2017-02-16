@@ -1,3 +1,4 @@
+declare var grecaptcha: any;
 class CfHandler {
   private nameInput: Element;
   private emailInput: Element;
@@ -116,7 +117,8 @@ class CfHandler {
 
   private checkCaptcha(): number {
     var that = <any>this;
-    if(that.gValEl.dataset["response"] === "" || !that.gValEl.dataset["response"] || that.gValEl.dataset["response"] === undefined) {
+    var response = grecaptcha.getResponse();
+    if (response === "" || !response || response === undefined) {
       that.manageError(that.gValEl, 600);
       return 600;
     } else {
@@ -162,7 +164,7 @@ class CfHandler {
                 break;
             } 
         };
-        var data = 'n=' + that.nameInput.value + '&e=' + that.emailInput.value + '&t=' + that.titleInput.value + '&m=' + that.messageInput.value + '&g=' + that.gValEl.dataset["response"];
+        var data = 'n=' + that.nameInput.value + '&e=' + that.emailInput.value + '&t=' + that.titleInput.value + '&m=' + that.messageInput.value + '&g=' + grecaptcha.getResponse();
         xmlhttp.open("POST", "http://localhost:8081/mailer/sendmail.php", true);
         xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         xmlhttp.send(encodeURI(data));
