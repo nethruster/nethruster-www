@@ -9,7 +9,7 @@ function routeHandler(handler: TabHandler){
     if(tabEl) {
       handler.setTab(tabEl);
     } else {
-      console.log("The tab does not exist");
+      console.log("The tab does not exist, maybe fire up a toast? Could be an option");
     }
   } else {
     // We are at root path

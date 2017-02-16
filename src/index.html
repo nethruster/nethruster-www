@@ -10,6 +10,9 @@
 
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500">
+
+    <!-- Gotta keep those bad robots out -->
+    <script async defer src='https://www.google.com/recaptcha/api.js?onload=onloadCallback'></script>
 </head>
 <body class="flex flex-dc">
     <div class="header">
@@ -40,8 +43,8 @@
                     </svg>&nbsp;&nbsp;
                     <p>Follow us</p>
                 </a>
-                <a id="header-contact-button" class="header-button flex flex-full-center pointer" data-pos="75" data-tab="contact">
-                   <svg class="contact" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                <a id="header-contact-button" class="header-button flex flex-full-center pointer" data-pos="66.666666" data-tab="contact">
+                   <svg class="contact" height="18" viewBox="0 0 24 24" width="18">
                         <path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/>
                     </svg>&nbsp;&nbsp;
                     <p>Get in touch</p>
@@ -202,7 +205,44 @@
             </div>
         </div>
         <div id="contact" class="flex section">
-            Contact
+            <div class="manual-links">
+                <p class="contact-link-wrapper">
+                    Tweet us <a class="contact-tab-link" href="https://twitter.com/nethruster" target="_blank" rel="noopener">@nethruster</a>
+                </p>
+                <p class="contact-link-wrapper">
+                    Email us manually at <a class="contact-tab-link" href="mailto:nethruster@gmail.com" rel="noopener">nethruster@gmail.com</a>
+                </p>
+            </div>
+            <div class="contact-choice-text-wrapper">
+                OR
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="neth-cf" class="contact-form flex flex-dc flex-main-center">
+                    <span class="contact-form-input flex flex-dc">
+                        <label for="cf-name">What's your name?</label>
+                        <input id="cf-name" class="contact-data-input" data-type="name" type="text" placeholder="Please, write your name">
+                        <span class="validation"></span>
+                    </span>
+                    <span class="contact-form-input flex flex-dc">
+                        <label for="cf-email">What's your email?</label>
+                        <input id="cf-email" class="contact-data-input" data-type="email" type="email" placeholder="Please, write a valid email address">
+                        <span class="validation"></span>
+                    </span>
+                    <span class="contact-form-input flex flex-dc">
+                        <label for="cf-title">What do you want to talk about?</label>
+                        <input id="cf-title" class="contact-data-input" data-type="title" type="text" placeholder="Please, write a descriptive title">
+                        <span class="validation"></span>
+                    </span>
+                     <span class="contact-form-textarea flex flex-dc">
+                        <label for="cf-message" >Please, explain yourself:</label>
+                        <textarea id="cf-message" class="contact-data-input" data-type="message" placeholder="Okay, now the full message"></textarea>
+                        <span class="validation"></span>
+                    </span>
+                    <div id="cf-recpt" class="g-recaptcha" data-sitekey="6LfiixUTAAAAAAEzskfHGXkqtu1z9LCGTVwcvIoO" data-callback="test" data-response=""></div>
+                    <span id="final-validation" class="validation"></span>
+                    <button id="cf-send-button" class="cf-send">Send Message</button>
+                </form>
+            </div>
         </div>
         <div id="not-found" class="flex section">
             Not Found
@@ -212,5 +252,10 @@
         <p>Nethruster&nbsp;&nbsp;2015&nbsp;&dash;&nbsp;<script>document.write(new Date().getFullYear())</script></p>
     </div>
     <script defer async type="text/javascript" src="//platform.twitter.com/widgets.js" ></script>
+    <script>
+        function test(r) {
+            document.getElementById('cf-recpt').dataset.response = r;
+        }
+    </script>
 </body>
 </html>
