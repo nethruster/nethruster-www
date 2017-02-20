@@ -14,33 +14,28 @@ class MdRipple {
   }
 
   private manageRipple(e): void {
-    let el = e.target;
-    if(el.tagName === "SPAN" || el.tagName === "svg" || el.tagName === "P") {
-       this.appendRipple(el.parentElement, e);
-    } else if(el.tagName === "path"){
-       this.appendRipple(el.parentElement.parentElement, e);
-    } else {
-       this.appendRipple(el, e);
-    }
-  }
-
-  private appendRipple(element: HTMLElement, e: MouseEvent): void {
     let tempRippleEl = document.createElement('span');
+    let element = e.currentTarget;
     tempRippleEl.classList.add('ripple');
     let children = element.children;
     /* Add a ripple element if container doesn't have one */
-    for(let i = children.length - 1; i>=0; i--){
-      if(children[i].classList.contains('ripple')) {
-        element.removeChild(children[i]);
-      } else {
-        element.appendChild(tempRippleEl);
+    if(children.length === 0) {
+      element.appendChild(tempRippleEl);
+    } else {
+        for(let i = children.length - 1; i>=0; i--) {
+          if(children[i].classList.contains('ripple')) {
+            break;
+          } else {
+            element.appendChild(tempRippleEl);
+          }
+        }
       }
-    }
+    
     /* If there is a ripple element, start everything */
     for(let i = children.length - 1; i>=0; i--){
       if(children[i].classList.contains('ripple')){
         children[i].classList.remove('animate');
-        this.rippleInit(<HTMLElement>children[i], element, e);
+        this.rippleInit(<HTMLElement>children[i], element, e.pageX, e.pageY);
       }
     }
 
@@ -48,7 +43,7 @@ class MdRipple {
     */
   }
 
-  private rippleInit(rippleEl: HTMLElement, parent: HTMLElement, e: MouseEvent) {
+  private rippleInit(rippleEl: HTMLElement, parent: HTMLElement, pageX: number, pageY: number) {
     let d, x, y;
     if(rippleEl.offsetHeight != parent.offsetHeight && rippleEl.offsetWidth != parent.offsetWidth){
       d = Math.max(parent.offsetHeight, parent.offsetWidth);
@@ -56,8 +51,8 @@ class MdRipple {
       rippleEl.style.width = d.toString() + 'px';
     }
 
-    x = e.pageX - this.getOffsetLeft(parent) - rippleEl.offsetWidth / 2;
-	  y = e.pageY - this.getOffsetTop(parent) - rippleEl.offsetHeight / 2;
+    x = pageX - this.getOffsetLeft(parent) - rippleEl.offsetWidth / 2;
+	  y = pageY - this.getOffsetTop(parent) - rippleEl.offsetHeight / 2;
     rippleEl.style.top = y + 'px';
     rippleEl.style.left = x + 'px';
     rippleEl.classList.add('animate');
