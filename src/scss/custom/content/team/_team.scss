@@ -10,7 +10,6 @@
 .team-member {
     width: 60%;
     justify-content: space-around;
-    align-items: center;
 
     &:nth-child(even) {
         flex-direction: row-reverse;
@@ -35,7 +34,7 @@
 
 .member-name {
     font-size: 1.4em;
-    font-weight: 300;
+    font-weight: $fw-thin;
 }
 
 .member-title {
@@ -45,7 +44,7 @@
 
 .member-link-button {
     padding: 8px;
-    border-radius: 4px;
+    border-radius: $block-br;
     background-color: #f5f5f5;
     margin: 5px 0;
     color: darken(#fff, 15%);

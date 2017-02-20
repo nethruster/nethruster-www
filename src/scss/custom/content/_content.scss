@@ -2,7 +2,6 @@
 @import './team/team';
 @import './contact/contact';
 
-
 body {
     min-height: 100vh;
 }
@@ -31,7 +30,7 @@ body {
 }
 
 .block-title {
-    font-weight: 400;
+    font-weight: $fw-normal;
     font-size: 1.1em;
     color: #424242;
 }
