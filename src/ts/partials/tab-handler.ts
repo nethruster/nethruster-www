@@ -20,18 +20,9 @@ class TabHandler {
   }
 
   private static listener(e: Event): boolean {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    e.preventDefault();
     var that = <any>this;
-    let el = <HTMLElement>e.target;
-    if(el.tagName === "SPAN" || el.tagName === "svg" || el.tagName === "P") {
-      that.setTab(el.parentElement);
-    } else if(el.tagName === "path"){
-      that.setTab(el.parentElement.parentElement);
-    } else {
-      that.setTab(el);
-    }
+    let el = <HTMLElement>e.currentTarget;
+    that.setTab(el);
     return false;
   }
 
