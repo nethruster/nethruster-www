@@ -1,18 +1,18 @@
 import TabHandler from './tab-handler';
 
 function routeHandler(handler: TabHandler){
-  let param = /[^/]*$/.exec(location.pathname)[0];
+  let param = /[^/]*$/.exec(location.pathname)[0]; /* Remove the slahes */
 
   if(param && param != null) {
-    let tabEl = document.getElementById(`${param}-tab`);
+    let tabEl = document.getElementById(`${param}-tab`); /* Select tab section */
     
     if(tabEl) {
       handler.setTab(tabEl);
     } else {
-      console.log("The tab does not exist, maybe fire up a toast? Could be an option");
+      /* TODO use a not found tab/element */
     }
   } else {
-    // We are at root path
+    /* In case no tab is specified, go home */
     handler.setTab(document.getElementById("home-tab"));
   }
 }

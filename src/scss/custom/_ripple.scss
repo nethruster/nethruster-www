@@ -1,0 +1,17 @@
+/* ripple styles */
+.ripple {
+    display: block;
+    position: absolute;
+    background: rgba(0,0,0,0.2);
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+.ripple.animate {
+    animation: ripple 0.65s linear;
+}
+
+.ripple-container {
+    position: relative;
+    overflow: hidden;
+}
