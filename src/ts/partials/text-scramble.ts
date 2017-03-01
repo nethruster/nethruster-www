@@ -27,9 +27,9 @@ class TextScramble {
   }
 
   private static timer() {
-    var that: any = this;
-    that.setText(that.phrases[that.counter]).then(that.refresh.bind(that));
-    that.counter = (that.counter + 1) % that.phrases.length
+    var self: any = this;
+    self.setText(self.phrases[self.counter]).then(self.refresh.bind(self));
+    self.counter = (self.counter + 1) % self.phrases.length
   }
 
   private refresh() {

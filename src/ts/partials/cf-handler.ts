@@ -13,37 +13,22 @@ class CfHandler {
   private messageInput: Element;
 
 
-  constructor() {
+  constructor(messages: Object) {
     this.findElements();
     this.addListeners();
-
-    // "Map" of Input status messages
-    this.messages = {
-      '-1': '',
-      '0': '\u2714&nbsp;This field is valid.',
-      '101': 'So, you don\'t have a name?',
-      '102': 'Your name contains ilegal characters.',
-      '201': 'Your email should not be empty.',
-      '202': 'Your email should contain \'@\' and end with a domain name. (max@somesite.ext)',
-      '301': 'The title should not be empty.',
-      '302': 'This title contains ilegal characters.',
-      '401': 'Your message should not be empty.',
-      '402': 'Your message contains invalid characters.',
-      '500': 'There was an error sending your message, try again later.',
-      '600': 'Invalid recaptcha.'
-    }
+    this.messages = messages;
   }
 
   private findElements(): void {
      // Find elements
-    this.cf = document.getElementById("neth-cf");
-    this.gValEl = document.getElementById('cf-recpt');
-    this.nameInput = document.querySelector("[data-type='name']");
-    this.emailInput = document.querySelector("[data-type='email']");
-    this.titleInput = document.querySelector("[data-type='title']");
-    this.sendButton = document.getElementById("cf-send-button");
-    this.messageInput = document.querySelector("[data-type='message']");
-    this.loadingEl = document.getElementById("loading-el");
+    this.cf           = document.getElementById("neth-cf"); // Contact form element
+    this.gValEl       = document.getElementById('cf-recpt'); // GRecaptcha element
+    this.sendButton   = document.getElementById("cf-send-button"); // Send button
+    this.loadingEl    = document.getElementById("loading-el"); // Loading element
+    this.nameInput    = document.querySelector("[data-type='name']"); // Name input
+    this.emailInput   = document.querySelector("[data-type='email']"); // Email input
+    this.titleInput   = document.querySelector("[data-type='title']"); // Title input
+    this.messageInput = document.querySelector("[data-type='message']"); // Message input
   }
 
   private addListeners():void {
@@ -65,8 +50,8 @@ class CfHandler {
     }
   }
 
-  private resize(e):void {
-     e.target.style.height = e.target.scrollHeight + "px";
+  private resize(e: any):void {
+     e.target.style.height = `${e.target.scrollHeight}px`;
      /* TODO adapt height in both directions (it currently expands but does not go back to normal if content is deleted) */
   }
 
@@ -93,73 +78,73 @@ class CfHandler {
   }
 
   private validateName(): number {
-    var that = <any>this;
-    let inputContent = that.nameInput.value;
+    var self = <any>this;
+    let inputContent = self.nameInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(that.nameInput, 101);
-      this.manageLabelActiveState(that.nameInput, false);
+      this.manageError(self.nameInput, 101);
+      this.manageLabelActiveState(self.nameInput, false);
       return 101;
     } else if(!inputContent.match(/^[a-zA-Z'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(that.nameInput, 102);
-      this.manageLabelActiveState(that.nameInput, true);
+      this.manageError(self.nameInput, 102);
+      this.manageLabelActiveState(self.nameInput, true);
       return 102;
     } else {
-      this.manageError(that.nameInput, 0);
-      this.manageLabelActiveState(that.nameInput, true);
+      this.manageError(self.nameInput, 0);
+      this.manageLabelActiveState(self.nameInput, true);
       return 0;
     }
   }
 
   private validateEmail(): number {
-    var that = <any>this;
-    let inputContent = that.emailInput.value;
+    var self = <any>this;
+    let inputContent = self.emailInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(that.emailInput, 201);
-      this.manageLabelActiveState(that.emailInput, false);
+      this.manageError(self.emailInput, 201);
+      this.manageLabelActiveState(self.emailInput, false);
       return 201;
     } else if(!inputContent.match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)) {
-      this.manageError(that.emailInput, 202);
-      this.manageLabelActiveState(that.emailInput, true);
+      this.manageError(self.emailInput, 202);
+      this.manageLabelActiveState(self.emailInput, true);
       return 202;
     } else {
-      this.manageError(that.emailInput, 0);
-      this.manageLabelActiveState(that.emailInput, true);
+      this.manageError(self.emailInput, 0);
+      this.manageLabelActiveState(self.emailInput, true);
       return 0;
     }
   }
 
   private validateTitle(): number {
-    var that = <any>this;
-    let inputContent = that.titleInput.value;
+    var self = <any>this;
+    let inputContent = self.titleInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(that.titleInput, 301);
-      this.manageLabelActiveState(that.titleInput, false);
+      this.manageError(self.titleInput, 301);
+      this.manageLabelActiveState(self.titleInput, false);
       return 301;
     } else if(!inputContent.match(/^[!-~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(that.messageInput, 401);
-      this.manageLabelActiveState(that.titleInput, true);
+      this.manageError(self.messageInput, 401);
+      this.manageLabelActiveState(self.titleInput, true);
       return 302;
     } else {
-      this.manageError(that.titleInput, 0);
-      this.manageLabelActiveState(that.titleInput, true);
+      this.manageError(self.titleInput, 0);
+      this.manageLabelActiveState(self.titleInput, true);
       return 0;
     }
   }
 
   private validateMessage(): number {
-    var that = <any>this;
-    let inputContent = that.messageInput.value;
+    var self = <any>this;
+    let inputContent = self.messageInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(that.messageInput, 401);
-      this.manageLabelActiveState(that.messageInput, false);
+      this.manageError(self.messageInput, 401);
+      this.manageLabelActiveState(self.messageInput, false);
       return 401;
     } else if(!inputContent.match(/^[!-~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(that.messageInput, 402);
-      this.manageLabelActiveState(that.messageInput, true);
+      this.manageError(self.messageInput, 402);
+      this.manageLabelActiveState(self.messageInput, true);
       return 402;
     } else {
-      this.manageError(that.messageInput, 0);
-      this.manageLabelActiveState(that.messageInput, true);
+      this.manageError(self.messageInput, 0);
+      this.manageLabelActiveState(self.messageInput, true);
       return 0;
     }
   }
@@ -168,7 +153,7 @@ class CfHandler {
     var response = grecaptcha.getResponse();
     var fValidationEl = document.getElementById('final-validation');
     if (response === "" || !response || response === undefined) {
-      fValidationEl.innerHTML = this.messages['600'];
+      fValidationEl.innerHTML   = this.messages['600'];
       fValidationEl.style.color = 'red';
       return 600;
     } else {
@@ -191,41 +176,41 @@ class CfHandler {
     e.stopPropagation();
     e.stopImmediatePropagation();
     e.preventDefault();
-    var that = <any>this;
+    var self = <any>this;
     if(!(this.validateName() || this.validateEmail() || this.validateTitle() || this.validateMessage() || this.checkCaptcha())) {
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
-        that.loadingEl.style.display = 'block';
+        self.loadingEl.style.display = 'block';
         switch(this.responseText) {
           case '0':
-            that.loadingEl.innerHTML = 'Email sent succesfully!';
+            self.loadingEl.innerHTML = 'Email sent succesfully!';
             // TODO make loader reusable with form reset
-            setTimeout(that.resetFormStatus(that.cf), 2000);
+            setTimeout(self.resetFormStatus(self.cf), 2000);
           case '101':
           case '102':
-            that.manageError(that.nameInput, eval(this.responseText));
+            self.manageError(self.nameInput, eval(this.responseText));
             break;
           case '201':
           case '202':
-            that.manageError(that.emailInput, eval(this.responseText));
+            self.manageError(self.emailInput, eval(this.responseText));
             break;
           case '301':
           case '302':
-            that.manageError(that.titleInput, eval(this.responseText));
+            self.manageError(self.titleInput, eval(this.responseText));
             break;
           case '401':
           case '402':
-            that.manageError(that.titleInput, eval(this.responseText));
+            self.manageError(self.titleInput, eval(this.responseText));
             break;
           case '500':
-            that.manageError(that.gValEl, eval(this.responseText));
+            self.manageError(self.gValEl, eval(this.responseText));
             break;
           case '600':
-            that.manageError(that.gValEl, eval(this.responseText));
+            self.manageError(self.gValEl, eval(this.responseText));
             break;
         } 
       };
-      var data = 'n=' + that.nameInput.value + '&e=' + that.emailInput.value + '&t=' + that.titleInput.value + '&m=' + that.messageInput.value + '&g=' + grecaptcha.getResponse();
+      var data = 'n=' + self.nameInput.value + '&e=' + self.emailInput.value + '&t=' + self.titleInput.value + '&m=' + self.messageInput.value + '&g=' + grecaptcha.getResponse();
       xmlhttp.open("POST", "http://localhost:8081/mailer/sendmail.php", true);
       xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
       xmlhttp.send(encodeURI(data));
