@@ -3,8 +3,9 @@
 
 .header {
     width: 100%;
-    background-image: url(../assets/img/bg.jpeg);
-    background-position: 65% 20%;
+    background-image: url(https://assets-cdn.github.com/images/modules/sitenextnext/home-code-bg-alt-01.svg),linear-gradient(180deg, #24292e, #2b3137);
+    background-position: center -75px, 0 0;
+    background-size: 100% auto;
     padding: $container-padding;
     color: #f5f5f5;
     @include box_shadow(2);
