@@ -4,7 +4,7 @@ import TextScramble from "./partials/text-scramble";
 import CfHandler from "./partials/cf-handler";
 import routeHandler from "./partials/route-handler";
 import MdRipple from './partials/md-ripple';
-import BlogFeed from './partials/blog-feed';
+// import BlogFeed from './partials/blog-feed';
 
 function init() {
   // Vars
@@ -31,7 +31,7 @@ function init() {
   tabHandler.addListeners();
   routeHandler(tabHandler);
   new CfHandler(cfMessages);
-  new BlogFeed(blogUrl);
+  // new BlogFeed(blogUrl);
   new MdRipple();
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
   var scramble = new TextScramble(scrambleContainer, 1000, scramblePhrases);
