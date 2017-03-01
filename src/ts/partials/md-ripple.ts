@@ -11,7 +11,7 @@ class MdRipple {
     this.rippleContainers = document.getElementsByClassName('ripple-container');
 
     for(var i = this.rippleContainers.length - 1; i >= 0; i--) {
-      this.rippleContainers[i].addEventListener('mousedown', this.manageRipple.bind(this));
+      this.rippleContainers[i].addEventListener('click', this.manageRipple.bind(this));
     }
   }
 
