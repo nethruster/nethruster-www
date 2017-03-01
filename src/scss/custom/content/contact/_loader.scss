@@ -1,7 +1,7 @@
 .loader {
   position: relative;
   margin: 0 auto;
-  width: $width;
+  width: $loader-width;
   &:before {
     content: '';
     display: block;

@@ -1,6 +1,6 @@
 class TabHandler {
   private tabList: Array<HTMLElement>;
-  private tabSlider: HTMLElement;
+  private tabSlider: any;
 
   constructor(className: string, tabSlider: string) {
     var nodeList = document.getElementsByClassName(className);
@@ -16,17 +16,18 @@ class TabHandler {
       var listener = TabHandler.listener.bind(this);
       tab.addEventListener("click", listener);
     });
+    
     document.getElementById('header-contact-button').addEventListener("click", TabHandler.listener.bind(this));
   }
 
   private static listener(e: Event): boolean {
-    var that = <any>this;
+    var self = <any>this;
     let el = <HTMLElement>e.currentTarget;
-    that.setTab(el);
+    self.setTab(el);
     return false;
   }
 
-  setTab(tab: HTMLElement): void {
+  setTab(tab): void {
     if (tab.dataset["tab"] === document.getElementsByClassName("section-active")[0].id) {
       // We don't need to change tabs if we are already in place
       return;

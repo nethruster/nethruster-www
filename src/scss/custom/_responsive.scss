@@ -17,7 +17,8 @@
 }
 
 @media (max-width: 1010px) {
-    #home, #contact {
+    #home, 
+    #contact {
         flex-direction: column;
     }
 
@@ -78,10 +79,6 @@
     #header, 
     .content-wrapper {
         padding: $container-padding-xxs;
-    }
-
-    .blog-feed {
-        border-radius: 0;
     }
 
     .block-title {
