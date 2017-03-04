@@ -5,8 +5,8 @@ import RssReader from "./partials/rss-reader";
 import CfHandler from "./partials/cf-handler";
 import routeHandler from "./partials/route-handler";
 import MdRipple from './partials/md-ripple';
-// import BlogFeed from './partials/blog-feed';
-
+import "./partials/parallax";
+declare var Parallax: any;
 function init() {
   // Vars
   var cfMessages = {
@@ -35,7 +35,9 @@ function init() {
   new MdRipple();
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
   var scramble = new TextScramble(scrambleContainer, 1000, scramblePhrases);
+  new Parallax(document.getElementsByClassName('scene')[0]);
   scramble.start();
+
 }
 
 init();
