@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
@@ -34,7 +35,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(html|png|jpg|jpeg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
@@ -44,5 +45,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.scss', '.html']
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      {from: 'assets', to: 'assets'},
+      {from: 'index.html'}
+    ])
+  ]
 };
