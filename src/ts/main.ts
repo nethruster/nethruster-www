@@ -9,6 +9,12 @@ import "./partials/parallax";
 declare var Parallax: any;
 
 function init() {
+  try {
+    if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))){
+      alert("Para obtener una experiencia completa le recomendamos que utilize otro navegador web tal como Google Chrome o Firefox");
+    }
+  } catch(err) {}
+
   // Vars
   var cfMessages = {
     '-1': '',
@@ -25,7 +31,6 @@ function init() {
     '600': 'Invalid recaptcha.'
   };
   var scramblePhrases = ['We design,', 'we code,', 'we create.'];
-
   // Init
   var tabHandler = new TabHandler("header-tab", "tabs-slider");
   tabHandler.addListeners();
@@ -34,7 +39,7 @@ function init() {
   // var rssReader = new RssReader(blogUrl);
   new MdRipple();
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
-  var scramble = new TextScramble(scrambleContainer, 1000, scramblePhrases);
+  var scramble = new TextScramble(scrambleContainer, 1500, scramblePhrases);
   new Parallax(document.getElementsByClassName('scene')[0]);
   scramble.start();
 }
