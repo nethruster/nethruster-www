@@ -12,7 +12,7 @@
 .header-upper-bar {
     animation: in;
     animation-duration: .6s;
-    animation-delay: .6s;
+    animation-delay: .4s;
     animation-fill-mode: both;
     opacity: 1;
 }
@@ -39,7 +39,7 @@
 .title-active {
     animation: in;
     animation-duration: .6s;
-    animation-delay: .3s;
+    animation-delay: .2s;
     animation-fill-mode: both;
     display: block;
     opacity: 1;
