@@ -10,6 +10,7 @@
 
     CodePen - InlinSVG    -- https://codepen.io/geelen/pen/mAAvKz
     Ripple Effect SVG     -- http://webbbr.com/2015/09/22/ripple-effect-svg-icon-buttons/
+    PHPMailer             -- https://github.com/PHPMailer/PHPMailer
 
 # TECHNOLOGY COLOPHON
 
