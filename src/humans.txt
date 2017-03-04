@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Guillem Arias         -- Front-end Developer and Designer              -- https://www.gariasf.com
+    Claudio Yanes         -- Backend Developer and Systems Administrator   -- https://claudio4.com
+
+# THANKS
+
+    CodePen - InlinSVG    -- https://codepen.io/geelen/pen/mAAvKz
+    Ripple Effect SVG     -- http://webbbr.com/2015/09/22/ripple-effect-svg-icon-buttons/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3/SCSS, SVG
+    Typescript, NPM, Webpack
