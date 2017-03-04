@@ -5,7 +5,7 @@
 .header-button {
     padding: 10px 18px;
     margin: 5px;
-    background: rgba(255, 255, 255, .9);
+    background-color: $selector-color;
     border-radius: $block-br;
     width: 100%;
     @include box_shadow(1);
@@ -13,19 +13,19 @@
     letter-spacing: 1.5px;
     font-size: .8em;
     white-space: nowrap;
-    color: #444;
+    color: $dark-bg-color;
+    transition: $global-tr;
+    animation: in;
+    animation-duration: .6s;
+    animation-delay: .8s;
+    animation-fill-mode: both;
+    opacity: 1;
 
     svg {
         width: 20px;
     }
 
     &:hover {
-        .twitter path {
-            fill: $twitter-color;
-        }
-
-        .contact path {
-            fill: $other-color;
-        }
+        background-color: lighten($selector-color, 15%);
     }
 }

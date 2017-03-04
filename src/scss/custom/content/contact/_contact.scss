@@ -5,35 +5,10 @@
     justify-content: space-around;
 }
 
-.manual-links {
-    font-weight: $fw-thin;
-    .twitter {
-        color: $twitter-color;
-    }
-
-    .mail {
-        color: darken($other-color, 40%);
-    }
-}
-
-.manual-links, .contact-form-wrapper {
+.contact-form-wrapper {
     padding: 24px;
     transition: $global-tr;
     border-radius: $block-br;
     width: 100%;
     max-width: 800px;
-    
-    &:hover {
-        background: rgba(0,0,0,.05);
-    }
 }
-
-// .contact-choice-text-wrapper {
-//     font-size: 2.5rem;
-//     color: $other-color;
-//     padding: 64px;
-//     transition: $global-tr;
-//     &:hover {
-//         color: darken($other-color, 40%);
-//     }
-// }
