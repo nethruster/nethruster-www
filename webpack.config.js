@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
@@ -8,6 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: "/",
     filename: '[name].bundle.js',
   },
   devServer: {
@@ -17,7 +20,6 @@ module.exports = {
     hot: false,
     quiet: true
   },
-  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -26,16 +28,18 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [{
-            loader: "style-loader" // creates style nodes from JS strings
-        }, {
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
             loader: "css-loader" // translates CSS into CommonJS
-        }, {
+          }, {
             loader: "sass-loader" // compiles Sass to CSS
-        }]
+          }]
+        })
+
       },
       {
-        test: /\.(html|png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
@@ -48,8 +52,15 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      {from: 'assets', to: 'assets'},
-      {from: 'index.html'}
-    ])
+      { from: 'assets', to: 'assets' }
+    ]),
+    new ExtractTextPlugin("styles.css"),
+    new HtmlWebpackPlugin({
+      minify: {
+        collapseWhitespace: true
+      },
+      hash: true,
+      template: './index.html'
+    })
   ]
 };
