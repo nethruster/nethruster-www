@@ -3,12 +3,18 @@
 
 .header {
     width: 100%;
-    background-image: url(../assets/img/bg.svg),linear-gradient(180deg, #24292e, #2b3137); // This is temporary, I need to use a different image, I know
-    background-position: center -75px, 0 0;
-    background-size: 100% auto;
+    background-color: #37474F;
+    min-height: 280px;
     padding: $container-padding;
     color: #f5f5f5;
-    @include box_shadow(2);
+}
+
+.header-upper-bar {
+    animation: in;
+    animation-duration: .6s;
+    animation-delay: .6s;
+    animation-fill-mode: both;
+    opacity: 1;
 }
 
 .header-middle {
@@ -36,10 +42,19 @@
     animation-delay: .3s;
     animation-fill-mode: both;
     display: block;
-    margin-left: 0;
     opacity: 1;
 }
 
 .scramble-text, .header-middle-desc {
     color: #bdbdbd;
+}
+
+.parallax-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+        max-width: 1700px;
+    }
 }

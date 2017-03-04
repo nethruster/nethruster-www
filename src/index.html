@@ -14,6 +14,11 @@
     <script async defer src='https://www.google.com/recaptcha/api.js?onload=onloadCallback'></script>
 </head>
 <body class="flex flex-dc">
+    <div class="parallax-wrapper flex flex-full-center">
+        <div class="scene" data-limit-y="0">
+            <img class="layer" data-depth="0.90" src="./assets/img/header-bg.png"></img>
+        </div>
+    </div>
     <div class="header">
         <div class="header-upper-bar flex flex-full-center">
             <img src="./assets/img/banner-white.svg" alt="" class="img-responsive" style="width: 220px">
@@ -287,5 +292,10 @@
         <p>Nethruster&nbsp;&nbsp;2015&nbsp;&dash;&nbsp;<script>document.write(new Date().getFullYear())</script></p>
     </div>
     <script defer async type="text/javascript" src="//platform.twitter.com/widgets.js" ></script>
+    <script src="./assets/js/parallax.js"></script>
+    <script>
+        var scene = document.getElementsByClassName('scene')[0];
+        new Parallax(scene);
+    </script>
 </body>
 </html>
