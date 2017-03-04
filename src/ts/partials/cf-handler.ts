@@ -211,7 +211,7 @@ class CfHandler {
         } 
       };
       var data = 'n=' + self.nameInput.value + '&e=' + self.emailInput.value + '&t=' + self.titleInput.value + '&m=' + self.messageInput.value + '&g=' + grecaptcha.getResponse();
-      xmlhttp.open("POST", "http://localhost:8081/mailer/sendmail.php", true);
+      xmlhttp.open("POST", "https://www.nethruster.com/mailer/sendmail.php", true);
       xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
       xmlhttp.send(encodeURI(data));
     } else {
