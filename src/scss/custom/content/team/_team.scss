@@ -49,12 +49,14 @@
     margin: 5px 0;
     color: darken(#fff, 15%);
     white-space: nowrap;
+    transition: $global-tr;
     
     p {
         color: darken(#fff, 75%);
     }
     
     &:hover {
+        @include box_shadow(1);
         .twitter path {
             fill: $twitter-color;
         }
