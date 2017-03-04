@@ -1,6 +1,7 @@
 import "../scss/styles.scss";
 import TabHandler from "./partials/tab-handler";
 import TextScramble from "./partials/text-scramble";
+import RssReader from "./partials/rss-reader";
 import CfHandler from "./partials/cf-handler";
 import routeHandler from "./partials/route-handler";
 import MdRipple from './partials/md-ripple';
@@ -23,7 +24,6 @@ function init() {
     '600': 'Invalid recaptcha.'
   };
   var scramblePhrases = ['We design,', 'we code,', 'we create.'];
-  var blogUrl = 'https://blog.gariasf.com/rss/';
 
   // Init
   
@@ -31,7 +31,7 @@ function init() {
   tabHandler.addListeners();
   routeHandler(tabHandler);
   new CfHandler(cfMessages);
-  // new BlogFeed(blogUrl);
+  // var rssReader = new RssReader(blogUrl);
   new MdRipple();
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
   var scramble = new TextScramble(scrambleContainer, 1000, scramblePhrases);
