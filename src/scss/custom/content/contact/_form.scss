@@ -107,7 +107,7 @@ label.has-content {
 }
 
 .cf-send {
-    background: rgba(32, 50, 62, .7);
+    background-color: rgba(32, 50, 62, .7);
     color: #fff;
     border-radius: $block-br;
     padding: 8px;
@@ -119,4 +119,10 @@ label.has-content {
     -moz-appearance: none;
     appearance: none;
     border: none;
+    transition: $global-tr;
+
+    &:hover {
+        background-color: lighten(rgba(32, 50, 62, .7), 15%);
+        @include box_shadow(2);
+    }
 }
