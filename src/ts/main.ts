@@ -7,6 +7,7 @@ import routeHandler from "./partials/route-handler";
 import MdRipple from './partials/md-ripple';
 import "./partials/parallax";
 declare var Parallax: any;
+
 function init() {
   // Vars
   var cfMessages = {
@@ -26,7 +27,6 @@ function init() {
   var scramblePhrases = ['We design,', 'we code,', 'we create.'];
 
   // Init
-  
   var tabHandler = new TabHandler("header-tab", "tabs-slider");
   tabHandler.addListeners();
   routeHandler(tabHandler);
@@ -37,7 +37,6 @@ function init() {
   var scramble = new TextScramble(scrambleContainer, 1000, scramblePhrases);
   new Parallax(document.getElementsByClassName('scene')[0]);
   scramble.start();
-
 }
 
 init();
