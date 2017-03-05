@@ -1,6 +1,6 @@
 {
   "name": "nethruster-website",
-  "version": "1.0.0",
+  "version": "1.0.0-R1",
   "description": "Nethruster's webpage source code",
   "scripts": {
     "start": "webpack-dev-server",
