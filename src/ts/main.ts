@@ -11,9 +11,11 @@ declare var Parallax: any;
 function init() {
   try {
     if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))){
-      alert("Para obtener una experiencia completa le recomendamos que utilize otro navegador web tal como Google Chrome o Firefox");
+      alert("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
     }
-  } catch(err) {}
+  } catch(err) {
+    console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
+  }
 
   // Vars
   var cfMessages = {
@@ -42,6 +44,7 @@ function init() {
   var scramble = new TextScramble(scrambleContainer, 1500, scramblePhrases);
   new Parallax(document.getElementsByClassName('scene')[0]);
   scramble.start();
+  console.log("Humans worked on this project! https://nethruster.com/humans.txt");
 }
 
 init();
