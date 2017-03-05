@@ -158,12 +158,13 @@ class CfHandler {
       fValidationEl.style.color = 'red';
       return 600;
     } else {
-      fValidationEl.innerHTML = ``;
+      fValidationEl.innerHTML = "";
       return 0;
     }
   }
 
   private resetFormStatus(input: HTMLFormElement):void {
+    var self = <any>this;
     var inputs = document.querySelectorAll("[data-type]");
     for(let i = inputs.length - 1; i>=0; i--) {
       this.manageLabelActiveState(inputs[i], false);
@@ -182,17 +183,13 @@ class CfHandler {
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         // Reset loader
-        self.loadingEl.innerHTML = `<div class="loader">
-                                        <svg class="circular" viewBox="25 25 50 50">
-                                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-                                        </svg>
-                                    </div>`;
+        self.loadingEl.innerHTML = `<div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>`
         self.loadingEl.style.display = 'block';
         switch(this.responseText) {
           case '0':
-            self.loadingEl.removeAttribute('style');
             self.loadingEl.innerHTML = 'Email sent succesfully!';
             setTimeout(self.resetFormStatus(self.cf), 2000);
+            break;
           case '101':
           case '102':
             self.manageError(self.nameInput, eval(this.responseText));
@@ -215,9 +212,6 @@ class CfHandler {
           case '600':
             self.manageError(self.gValEl, eval(this.responseText));
             break;
-          default:
-            self.loadingEl.style.color = 'red';
-            self.loadingEl.innerHTML = 'We couldn\'t send your message, sorry :(.';
         } 
       };
       var data = 'n=' + self.nameInput.value + '&e=' + self.emailInput.value + '&t=' + self.titleInput.value + '&m=' + self.messageInput.value + '&g=' + grecaptcha.getResponse();
