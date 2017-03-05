@@ -12,6 +12,7 @@ function init() {
   try {
     if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))){
       alert("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
+      console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
     }
   } catch(err) {
     console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
