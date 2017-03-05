@@ -55,8 +55,9 @@ class CfHandler {
      /* TODO adapt height in both directions (it currently expands but does not go back to normal if content is deleted) */
   }
 
-  private manageError(input: Element, error: number): void {
+  private manageError(input: HTMLInputElement, error: number): void {
     let validationTextContainer = input.nextElementSibling.nextElementSibling.nextElementSibling;
+    input.focus();
     if(!error) {
       input.classList.remove('error');
       input.classList.add('valid');
@@ -157,7 +158,7 @@ class CfHandler {
       fValidationEl.style.color = 'red';
       return 600;
     } else {
-      fValidationEl.innerHTML = '';
+      fValidationEl.innerHTML = ``;
       return 0;
     }
   }
@@ -180,11 +181,17 @@ class CfHandler {
     if(!(this.validateName() || this.validateEmail() || this.validateTitle() || this.validateMessage() || this.checkCaptcha())) {
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
+        // Reset loader
+        self.loadingEl.innerHTML = `<div class="loader">
+                                        <svg class="circular" viewBox="25 25 50 50">
+                                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                                        </svg>
+                                    </div>`;
         self.loadingEl.style.display = 'block';
         switch(this.responseText) {
           case '0':
+            self.loadingEl.removeAttribute('style');
             self.loadingEl.innerHTML = 'Email sent succesfully!';
-            // TODO make loader reusable with form reset
             setTimeout(self.resetFormStatus(self.cf), 2000);
           case '101':
           case '102':
@@ -208,6 +215,9 @@ class CfHandler {
           case '600':
             self.manageError(self.gValEl, eval(this.responseText));
             break;
+          default:
+            self.loadingEl.style.color = 'red';
+            self.loadingEl.innerHTML = 'We couldn\'t send your message, sorry :(.';
         } 
       };
       var data = 'n=' + self.nameInput.value + '&e=' + self.emailInput.value + '&t=' + self.titleInput.value + '&m=' + self.messageInput.value + '&g=' + grecaptcha.getResponse();
