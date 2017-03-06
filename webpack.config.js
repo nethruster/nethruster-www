@@ -54,7 +54,9 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'assets', to: 'assets' }
+      { from: 'assets', to: 'assets' },
+      { from: 'humans.txt'},
+      { from: 'robots.txt'}
     ]),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
