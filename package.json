@@ -3,7 +3,8 @@
   "version": "1.0.0-R1",
   "description": "Nethruster's webpage source code",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
