@@ -5,6 +5,7 @@ import RssReader from "./partials/rss-reader";
 import CfHandler from "./partials/cf-handler";
 import routeHandler from "./partials/route-handler";
 import MdRipple from './partials/md-ripple';
+import autosize from "./partials/autosize";
 import "./partials/parallax";
 declare var Parallax: any;
 
@@ -15,7 +16,7 @@ function init() {
       console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
     }
   } catch(err) {
-    console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
+      console.warn("In order to enjoy our website properly, we recommend using modern web browsers such as Google Chrome or Mozilla Firefox.");
   }
 
   // Vars
@@ -41,11 +42,13 @@ function init() {
   new CfHandler(cfMessages);
   // var rssReader = new RssReader(blogUrl);
   new MdRipple();
+  autosize(document.querySelector('textarea'));
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
   var scramble = new TextScramble(scrambleContainer, 1500, scramblePhrases);
   new Parallax(document.getElementsByClassName('scene')[0]);
   scramble.start();
   console.log("Humans worked on this project! https://nethruster.com/humans.txt");
+  
 }
 
 init();

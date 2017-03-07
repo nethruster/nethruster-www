@@ -37,7 +37,6 @@ class CfHandler {
     this.emailInput.addEventListener('input', this.validateEmail.bind(this));
     this.titleInput.addEventListener('input', this.validateTitle.bind(this));
     this.messageInput.addEventListener('input', this.validateMessage.bind(this));
-    this.messageInput.addEventListener('input', this.resize.bind(this));
     this.sendButton.addEventListener('click', this.sendEmail.bind(this));
   }
 
@@ -48,11 +47,6 @@ class CfHandler {
     } else if(!state) {
       labelEl.classList.remove('has-content');
     }
-  }
-
-  private resize(e: any):void {
-     e.target.style.height = `${e.target.scrollHeight}px`;
-     /* TODO adapt height in both directions (it currently expands but does not go back to normal if content is deleted) */
   }
 
   private manageError(input: HTMLInputElement, error: number): void {
