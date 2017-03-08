@@ -18,6 +18,7 @@ class TabHandler {
     });
     
     document.getElementById('header-contact-button').addEventListener("click", TabHandler.listener.bind(this));
+    document.getElementById('not-found-contact').addEventListener("click", TabHandler.listener.bind(this));
   }
 
   private static listener(e: Event): boolean {
@@ -28,10 +29,19 @@ class TabHandler {
   }
 
   setTab(tab): void {
+    if(tab == undefined || !tab || tab === null) {
+      // Not found 
+      this.cleanSelected(document.getElementsByClassName("title-active"), document.getElementsByClassName("section-active"));
+      this.activeSelecteditems('not-found');
+      this.tabSlider.style.left = `-200%`;
+      return;
+    }
+
     if (tab.dataset["tab"] === document.getElementsByClassName("section-active")[0].id) {
       // We don't need to change tabs if we are already in place
       return;
     }
+
     // Remove the active class from the current active element
     this.cleanSelected(document.getElementsByClassName("title-active"), document.getElementsByClassName("section-active"));
     // Add the active class to the selected element 
@@ -43,6 +53,10 @@ class TabHandler {
   }
 
   private cleanSelected(activeTitleElements: HTMLCollectionOf<Element>, activeContentElements: HTMLCollectionOf<Element>): void {
+    if(!activeTitleElements[0]) {
+      activeContentElements[0].classList.toggle('section-active');
+      return;
+    }
     if (activeTitleElements[0] && activeContentElements[0]) {
       activeTitleElements[0].classList.toggle('title-active');
       activeContentElements[0].classList.toggle('section-active');
@@ -50,8 +64,12 @@ class TabHandler {
   }
 
   private activeSelecteditems(tab: string): void {
-    document.getElementById(`${tab}-titles`).classList.toggle('title-active');
-    document.getElementById(`${tab}`).classList.toggle('section-active');
+    let title = document.getElementById(`${tab}-titles`);
+    let tabEl = document.getElementById(`${tab}`);
+    if(title) {
+      title.classList.toggle('title-active');
+    }
+    tabEl.classList.toggle('section-active');
   }
 }
 
