@@ -12,13 +12,13 @@
         content: attr(data-tooltip);
         background-color: transparentize($selector-color, .1);
         position: absolute;
-        font-weight: 300;
+        font-weight: $fw-thin;
         padding: 4px 8px;
         border-radius: $block-br;
         color: #f1f1f1;
         white-space: nowrap;
         animation: in;
-        animation-duration: .6s;
+        animation-duration: .3s;
         animation-fill-mode: both;
     }
 
@@ -29,10 +29,9 @@
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 8px solid transparentize($selector-color, .1);
-        font-weight: 300;
         position: absolute;
         animation: in;
-        animation-duration: .6s;
+        animation-duration: .3s;
         animation-fill-mode: both;
     }
 }
