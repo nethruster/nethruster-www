@@ -18,7 +18,12 @@
     height: auto;
 }
 
+.recent-project-info {
+    margin-left: 15px;
+}
+
 .recent-project-name {
+    color: darken(rgb(69,90,100), 10%);
     font-weight: $fw-thin;
     font-size: 1.2em;
 }
@@ -47,4 +52,8 @@
     &:hover {
         background-color: lighten(rgb(69,90,100), 60%);
     }
+}
+
+.recent-project-links{
+    flex-direction: row-reverse;
 }

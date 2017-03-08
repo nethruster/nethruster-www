@@ -32,9 +32,20 @@ body {
 }
 
 .block-title {
-    font-weight: $fw-normal;
-    font-size: 1.1em;
-    color: #424242;
+    font-weight: 400;
+    font-size: 1em;
+    color: darken($selector-color, 4%);
+    justify-content: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    
+    svg {
+        width: 22px;
+    }
+
+    path {
+        fill: lighten(#B0BEC5, 5%);
+    }
 }
 
 .left-side {
