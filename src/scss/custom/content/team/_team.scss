@@ -4,7 +4,7 @@
 }
 
 .member-profile {
-    padding: 15px;
+    padding: 35px 15px;
 }
 
 .team-member {
@@ -55,6 +55,12 @@
         color: darken(#fff, 75%);
     }
     
+    img {
+        width: 24px;
+        filter: grayscale(100%) brightness(4);
+        transition: $global-tr;
+    }
+    
     &:hover {
         @include box_shadow(1);
         .twitter path {
@@ -67,6 +73,10 @@
 
         .website path {
             fill: $other-color;
+        }
+
+        img {
+            filter: none;
         }
     }
 }
