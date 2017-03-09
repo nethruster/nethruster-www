@@ -69,8 +69,8 @@ function init() {
   var scrambleContainer = <HTMLElement>document.querySelector('.scramble-text');
   var scramble = new TextScramble(scrambleContainer, 1500, scramblePhrases);
   scramble.start();
-  var rssReader = new RssReader(blogUrl);
-  rssReader.getFeedAsync(populateFromFeed);
+  // var rssReader = new RssReader(blogUrl);
+  // rssReader.getFeedAsync(populateFromFeed);
   console.log("Humans worked on this project! https://nethruster.com/humans.txt");
 }
 

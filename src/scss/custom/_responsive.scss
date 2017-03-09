@@ -26,12 +26,8 @@
         justify-content: center;
     }
 
-    .manual-links {
-        text-align: center;
-    }
-
-    .contact-choice-text-wrapper {
-        margin: 25px 0;
+    .member-profile {
+        padding: 15px;
     }
 
     .left-side {
@@ -56,17 +52,9 @@
     .arrow-to-left {
         transform: rotate(90deg);
     }
-}
 
-@media (max-width: 640px) {
-    .header-middle {
-         flex-direction: column;
-         text-align: center;
-         margin: 15px 0;
-    }
-
-    .team-member {
-        width: 100%;
+    #not-found h2 {
+        font-size: 1.5em;
     }
 }
 
@@ -107,5 +95,15 @@
 
     .footer {
         margin-bottom: 40px;
+    }
+
+    .header-middle {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .team-member {
+        width: 100%;
     }
 }

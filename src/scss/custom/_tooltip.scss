@@ -1,7 +1,6 @@
 .tooltip {
     &::before, &::after {
         top: $tooltip-top-pos;
-        transition: all .3s ease;
     }
     
     &::after {

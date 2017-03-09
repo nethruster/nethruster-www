@@ -40,14 +40,6 @@ Flexbox utils
     height: auto;
 }
 
-/* Transparent selection for the element and all its child elements*/
-.no-select *::-moz-selection {
-    background: transparent!important;
-}
-.no-select *::selection {
-    background: transparent!important;
-}
-
 /* Text align */
 .ta-c {
     text-align: center;
