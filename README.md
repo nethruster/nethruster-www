@@ -10,7 +10,6 @@ npm install
 # start development with hot reload at localhost:8080
 npm start
 
-# build for production with minification and autoprefixer. 
-# You might want to install webpack globally
+# build for production with minification and autoprefixer
 webpack -p
 ```

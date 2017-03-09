@@ -1,0 +1,19 @@
+#not-found {
+    padding: 15px;
+    h2 {
+        font-size: 3em;
+        font-weight: 300;
+    }
+
+    svg {
+        width: 72px;
+    }
+
+    path {
+        fill: $input-color-error;
+    }
+
+    p {
+        font-weight: 300;
+    }
+}

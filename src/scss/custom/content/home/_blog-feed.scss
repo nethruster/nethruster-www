@@ -1,0 +1,20 @@
+#blogfeed-container {
+    margin-top: 35px;
+}
+
+.blog-entry {
+    padding: 15px;
+    margin-left: 18px;
+}
+
+.entry-title {
+    font-weight: 300;
+    font-size: 1.2em;
+    color: darken(#455a64, 25%);
+}
+
+.entry-data {
+    font-weight: $fw-thin;
+    font-size: .8em;
+    color: darken($other-color, 30%);
+}

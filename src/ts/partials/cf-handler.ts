@@ -51,7 +51,6 @@ class CfHandler {
 
   private manageError(input: HTMLInputElement, error: number): void {
     let validationTextContainer = input.nextElementSibling.nextElementSibling.nextElementSibling;
-    input.focus();
     if(!error) {
       input.classList.remove('error');
       input.classList.add('valid');
@@ -63,6 +62,7 @@ class CfHandler {
       input.classList.remove('valid');
       validationTextContainer.classList.remove('valid')
     } else {
+      input.focus();
       input.classList.remove('valid');
       input.classList.add('error');
       validationTextContainer.classList.remove('valid')

@@ -22,20 +22,12 @@
         flex-direction: column;
     }
 
-    .manual-links {
-        text-align: center;
+    .block-title {
+        justify-content: center;
     }
 
-    .contact-choice-text-wrapper {
-        margin: 25px 0;
-    }
-
-    .blog-feed {
-        margin: 0 0 20px 0;
-    }
-
-    .entry-name{
-        font-size: .9em;
+    .member-profile {
+        padding: 15px;
     }
 
     .left-side {
@@ -60,17 +52,9 @@
     .arrow-to-left {
         transform: rotate(90deg);
     }
-}
 
-@media (max-width: 640px) {
-    .header-middle {
-         flex-direction: column;
-         text-align: center;
-         margin: 15px 0;
-    }
-
-    .team-member {
-        width: 100%;
+    #not-found h2 {
+        font-size: 1.5em;
     }
 }
 
@@ -111,5 +95,15 @@
 
     .footer {
         margin-bottom: 40px;
+    }
+
+    .header-middle {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .team-member {
+        width: 100%;
     }
 }

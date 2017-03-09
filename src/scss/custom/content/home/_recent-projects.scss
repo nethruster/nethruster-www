@@ -1,7 +1,6 @@
 .recent-projects {
     color: rgb(69,90,100);
     border-radius: $block-br;
-    overflow: hidden;
     margin-right: 50px;
 }
 
@@ -19,7 +18,12 @@
     height: auto;
 }
 
+.recent-project-info {
+    margin-left: 15px;
+}
+
 .recent-project-name {
+    color: darken(rgb(69,90,100), 10%);
     font-weight: $fw-thin;
     font-size: 1.2em;
 }
@@ -31,7 +35,7 @@
 }
 
 .recent-project-link {
-    display: inline-block;
+    position: relative;
     height: 100%;
     padding: 10px;
     margin: 0 10px;
@@ -48,4 +52,8 @@
     &:hover {
         background-color: lighten(rgb(69,90,100), 60%);
     }
+}
+
+.recent-project-links{
+    flex-direction: row-reverse;
 }

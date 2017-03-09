@@ -1,0 +1,36 @@
+.tooltip {
+    &::before, &::after {
+        top: $tooltip-top-pos;
+    }
+    
+    &::after {
+        top: $tooltip-top-pos + 32px;
+    }
+
+    &:hover::before {
+        content: attr(data-tooltip);
+        background-color: transparentize($selector-color, .1);
+        position: absolute;
+        font-weight: $fw-thin;
+        padding: 4px 8px;
+        border-radius: $block-br;
+        color: #f1f1f1;
+        white-space: nowrap;
+        animation: in;
+        animation-duration: .3s;
+        animation-fill-mode: both;
+    }
+
+    &:hover::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 8px solid transparentize($selector-color, .1);
+        position: absolute;
+        animation: in;
+        animation-duration: .3s;
+        animation-fill-mode: both;
+    }
+}
