@@ -1,16 +1,16 @@
 declare var grecaptcha: any;
 
 class CfHandler {
-  private cf: HTMLElement;
-  private gValEl: Element;
-  private loadingEl: Element;
+  private cf: HTMLFormElement;
+  private gValEl: HTMLInputElement;
+  private loadingEl: HTMLElement;
   private sendButton: Element;
 
   private messages: Object;
-  private nameInput: Element;
-  private emailInput: Element;
-  private titleInput: Element;
-  private messageInput: Element;
+  private nameInput: HTMLInputElement;
+  private emailInput: HTMLInputElement;
+  private titleInput: HTMLInputElement;
+  private messageInput: HTMLInputElement;
 
 
   constructor(messages: Object) {
@@ -21,14 +21,14 @@ class CfHandler {
 
   private findElements(): void {
      // Find elements
-    this.cf           = document.getElementById("neth-cf"); // Contact form element
-    this.gValEl       = document.getElementById('cf-recpt'); // GRecaptcha element
+    this.cf           = document.getElementById("neth-cf") as HTMLFormElement; // Contact form element
+    this.gValEl       = document.getElementById('cf-recpt') as HTMLInputElement; // GRecaptcha element
     this.sendButton   = document.getElementById("cf-send-button"); // Send button
     this.loadingEl    = document.getElementById("loading-el"); // Loading element
-    this.nameInput    = document.querySelector("[data-type='name']"); // Name input
-    this.emailInput   = document.querySelector("[data-type='email']"); // Email input
-    this.titleInput   = document.querySelector("[data-type='title']"); // Title input
-    this.messageInput = document.querySelector("[data-type='message']"); // Message input
+    this.nameInput    = document.querySelector("[data-type='name']") as HTMLInputElement; // Name input
+    this.emailInput   = document.querySelector("[data-type='email']") as HTMLInputElement; // Email input
+    this.titleInput   = document.querySelector("[data-type='title']") as HTMLInputElement; // Title input
+    this.messageInput = document.querySelector("[data-type='message']") as HTMLInputElement; // Message input
   }
 
   private addListeners():void {
@@ -73,73 +73,69 @@ class CfHandler {
   }
 
   private validateName(): number {
-    var self = <any>this;
-    let inputContent = self.nameInput.value;
+    let inputContent = this.nameInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(self.nameInput, 101);
-      this.manageLabelActiveState(self.nameInput, false);
+      this.manageError(this.nameInput, 101);
+      this.manageLabelActiveState(this.nameInput, false);
       return 101;
     } else if(!inputContent.match(/^[a-zA-Z'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(self.nameInput, 102);
-      this.manageLabelActiveState(self.nameInput, true);
+      this.manageError(this.nameInput, 102);
+      this.manageLabelActiveState(this.nameInput, true);
       return 102;
     } else {
-      this.manageError(self.nameInput, 0);
-      this.manageLabelActiveState(self.nameInput, true);
+      this.manageError(this.nameInput, 0);
+      this.manageLabelActiveState(this.nameInput, true);
       return 0;
     }
   }
 
   private validateEmail(): number {
-    var self = <any>this;
-    let inputContent = self.emailInput.value;
+    let inputContent = this.emailInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(self.emailInput, 201);
-      this.manageLabelActiveState(self.emailInput, false);
+      this.manageError(this.emailInput, 201);
+      this.manageLabelActiveState(this.emailInput, false);
       return 201;
     } else if(!inputContent.match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)) {
-      this.manageError(self.emailInput, 202);
-      this.manageLabelActiveState(self.emailInput, true);
+      this.manageError(this.emailInput, 202);
+      this.manageLabelActiveState(this.emailInput, true);
       return 202;
     } else {
-      this.manageError(self.emailInput, 0);
-      this.manageLabelActiveState(self.emailInput, true);
+      this.manageError(this.emailInput, 0);
+      this.manageLabelActiveState(this.emailInput, true);
       return 0;
     }
   }
 
   private validateTitle(): number {
-    var self = <any>this;
-    let inputContent = self.titleInput.value;
+    let inputContent = this.titleInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(self.titleInput, 301);
-      this.manageLabelActiveState(self.titleInput, false);
+      this.manageError(this.titleInput, 301);
+      this.manageLabelActiveState(this.titleInput, false);
       return 301;
     } else if(!inputContent.match(/^[!-~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(self.messageInput, 401);
-      this.manageLabelActiveState(self.titleInput, true);
+      this.manageError(this.messageInput, 401);
+      this.manageLabelActiveState(this.titleInput, true);
       return 302;
     } else {
-      this.manageError(self.titleInput, 0);
-      this.manageLabelActiveState(self.titleInput, true);
+      this.manageError(this.titleInput, 0);
+      this.manageLabelActiveState(this.titleInput, true);
       return 0;
     }
   }
 
   private validateMessage(): number {
-    var self = <any>this;
-    let inputContent = self.messageInput.value;
+    let inputContent = this.messageInput.value;
     if(inputContent == "" || inputContent == null || inputContent == undefined || !inputContent || !inputContent.match(/\w+/g)) {
-      this.manageError(self.messageInput, 401);
-      this.manageLabelActiveState(self.messageInput, false);
+      this.manageError(this.messageInput, 401);
+      this.manageLabelActiveState(this.messageInput, false);
       return 401;
     } else if(!inputContent.match(/^[!-~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ\s]*$/)) {
-      this.manageError(self.messageInput, 402);
-      this.manageLabelActiveState(self.messageInput, true);
+      this.manageError(this.messageInput, 402);
+      this.manageLabelActiveState(this.messageInput, true);
       return 402;
     } else {
-      this.manageError(self.messageInput, 0);
-      this.manageLabelActiveState(self.messageInput, true);
+      this.manageError(this.messageInput, 0);
+      this.manageLabelActiveState(this.messageInput, true);
       return 0;
     }
   }
@@ -158,7 +154,6 @@ class CfHandler {
   }
 
   private resetFormStatus(input: HTMLFormElement):void {
-    var self = <any>this;
     var inputs = document.querySelectorAll("[data-type]");
     for(let i = inputs.length - 1; i>=0; i--) {
       this.manageLabelActiveState(inputs[i], false);
@@ -172,43 +167,43 @@ class CfHandler {
     e.stopPropagation();
     e.stopImmediatePropagation();
     e.preventDefault();
-    var self = <any>this;
+    var classScope = this;
     if(!(this.validateName() || this.validateEmail() || this.validateTitle() || this.validateMessage() || this.checkCaptcha())) {
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         // Reset loader
-        self.loadingEl.innerHTML = `<div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>`
-        self.loadingEl.style.display = 'block';
+        classScope.loadingEl.innerHTML = `<div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>`
+        classScope.loadingEl.style.display = 'block';
         switch(this.responseText) {
           case '0':
-            self.loadingEl.innerHTML = 'Email sent succesfully!';
-            setTimeout(self.resetFormStatus(self.cf), 2000);
+            classScope.loadingEl.innerHTML = 'Email sent succesfully!';
+            setTimeout(classScope.resetFormStatus(classScope.cf), 2000);
             break;
           case '101':
           case '102':
-            self.manageError(self.nameInput, eval(this.responseText));
+            classScope.manageError(classScope.nameInput, eval(this.responseText));
             break;
           case '201':
           case '202':
-            self.manageError(self.emailInput, eval(this.responseText));
+            classScope.manageError(classScope.emailInput, eval(this.responseText));
             break;
           case '301':
           case '302':
-            self.manageError(self.titleInput, eval(this.responseText));
+            classScope.manageError(classScope.titleInput, eval(this.responseText));
             break;
           case '401':
           case '402':
-            self.manageError(self.titleInput, eval(this.responseText));
+            classScope.manageError(classScope.titleInput, eval(this.responseText));
             break;
           case '500':
-            self.manageError(self.gValEl, eval(this.responseText));
+            classScope.manageError(classScope.gValEl, eval(this.responseText));
             break;
           case '600':
-            self.manageError(self.gValEl, eval(this.responseText));
+            classScope.manageError(classScope.gValEl, eval(this.responseText));
             break;
         } 
       };
-      var data = 'n=' + self.nameInput.value + '&e=' + self.emailInput.value + '&t=' + self.titleInput.value + '&m=' + self.messageInput.value + '&g=' + grecaptcha.getResponse();
+      var data = 'n=' + this.nameInput.value + '&e=' + this.emailInput.value + '&t=' + this.titleInput.value + '&m=' + this.messageInput.value + '&g=' + grecaptcha.getResponse();
       xmlhttp.open("POST", "https://www.nethruster.com/mailer/sendmail.php", true);
       xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
       xmlhttp.send(encodeURI(data));

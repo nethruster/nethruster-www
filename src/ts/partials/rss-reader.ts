@@ -9,12 +9,12 @@ class RssReader {
   }
 
   private connect(callback): void {
-    var self = this;
+    var classScope = this;
     var client = new XMLHttpRequest();
 
     client.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           self.proccessXml(this.responseXML, callback);
+           classScope.proccessXml(this.responseXML, callback);
         }
     };
     client.open("GET", this.url, true);
@@ -25,9 +25,9 @@ class RssReader {
     // var feed = parser.parseFromString(rawData, "text/xml");
     var feedItems = feed.getElementsByTagName("item");
     var posts = new Array();
-    for(var i = 0; i < feedItems.length; i++) {
+    for(let i = 0; i < feedItems.length; i++) {
       posts[i] = new Array();
-      for( var n = 0; n < feedItems[i].childNodes.length; n++) {
+      for( let n = 0; n < feedItems[i].childNodes.length; n++) {
         if(feedItems[i].childNodes[n].textContent != '' ) {
           posts[i][feedItems[i].childNodes[n].nodeName.toLowerCase()] = feedItems[i].childNodes[n].textContent;
         } else {

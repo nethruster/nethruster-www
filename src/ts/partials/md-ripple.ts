@@ -10,7 +10,7 @@ class MdRipple {
   constructor() {
     this.rippleContainers = document.getElementsByClassName('ripple-container');
 
-    for(var i = this.rippleContainers.length - 1; i >= 0; i--) {
+    for(let i = this.rippleContainers.length - 1; i >= 0; i--) {
       this.rippleContainers[i].addEventListener('click', this.manageRipple.bind(this));
     }
   }

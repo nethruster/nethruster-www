@@ -6,7 +6,7 @@ class TabHandler {
     var nodeList = document.getElementsByClassName(className);
     this.tabSlider = document.getElementById(tabSlider);
     this.tabList = new Array(nodeList.length - 1);
-    for (var i = nodeList.length - 1; i >= 0; i--) {
+    for (let i = nodeList.length - 1; i >= 0; i--) {
       this.tabList[i] = <HTMLElement>nodeList[i];
     }
   }
@@ -22,9 +22,8 @@ class TabHandler {
   }
 
   private static listener(e: Event): boolean {
-    var self = <any>this;
     let el = <HTMLElement>e.currentTarget;
-    self.setTab(el);
+    (<any>this).setTab(el);
     return false;
   }
 
