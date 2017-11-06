@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
@@ -10,8 +10,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: "/",
-    filename: '[name].bundle.js',
+    publicPath: '/',
+    filename: '[name].bundle.js'
   },
   devServer: {
     contentBase: path.resolve(__dirname, './src'),
@@ -29,13 +29,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [{
-            loader: "css-loader" // translates CSS into CommonJS
-          },{
-            loader: "postcss-loader"
+            loader: 'css-loader' // translates CSS into CommonJS
           }, {
-            loader: "sass-loader" // compiles Sass to CSS
+            loader: 'postcss-loader'
+          }, {
+            loader: 'sass-loader' // compiles Sass to CSS
           }]
         })
 
@@ -55,10 +55,10 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       { from: 'assets', to: 'assets' },
-      { from: 'humans.txt'},
-      { from: 'robots.txt'}
+      { from: 'humans.txt' },
+      { from: 'robots.txt' }
     ]),
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       minify: {
         collapseWhitespace: true
@@ -67,4 +67,4 @@ module.exports = {
       template: './index.html'
     })
   ]
-};
+}
