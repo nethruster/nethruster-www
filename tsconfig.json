@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "allowJs": true,
-        "alwaysStrict": true,
-        "charset": "UTF-8",
-        "lib": ["dom", "es2015.promise", "es5"],
-        "target": "es5"
-    }
-}

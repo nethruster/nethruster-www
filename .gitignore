@@ -1,7 +1,0 @@
-.vscode/
-dist/*
-!dist/.gitkeep 
-node_modules/
-typings/
-npm-debug*
-src/mailer/*
